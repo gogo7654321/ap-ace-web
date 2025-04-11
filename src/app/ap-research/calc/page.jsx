@@ -108,7 +108,7 @@ const APResearchCalculator = () => {
 
   // Reset all scores to default values
   const resetScores = () => {
-    setPaperScore(50);
+    setPaperScore(100);
     setDesignsResearch(1);
     setEstablishesArgument(3);
     setReflectsOnFindings(1);
