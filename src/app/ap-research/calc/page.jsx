@@ -109,13 +109,13 @@ const APResearchCalculator = () => {
   // Reset all scores to default values
   const resetScores = () => {
     setPaperScore(100);
-    setDesignsResearch(1);
-    setEstablishesArgument(3);
-    setReflectsOnFindings(1);
-    setEngagesAudience(3);
-    setExplainsRationale(1);
-    setProvidesDetail(1);
-    setDemonstratesSignificance(1);
+    setDesignsResearch(3);
+    setEstablishesArgument(6);
+    setReflectsOnFindings(3);
+    setEngagesAudience(6);
+    setExplainsRationale(2);
+    setProvidesDetail(2);
+    setDemonstratesSignificance(2);
   };
 
   return (
@@ -127,7 +127,7 @@ const APResearchCalculator = () => {
         backgroundColor: 'var(--bg-light)' 
       }}>
         <div className="header-logo" style={{ marginBottom: '20px' }}>
-          <img src="/ap_research.png" alt="AP® Research Logo" style={{ maxHeight: '80px' }} />
+          <img src="images/ap_research.png" alt="AP® Research Logo" style={{ maxHeight: '80px' }} />
         </div>
         <h1 style={{ color: 'var(--primary-dark-blue)', marginBottom: '15px' }}>AP® Research Score Calculator</h1>
         <p style={{ color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
@@ -556,7 +556,7 @@ const APResearchCalculator = () => {
       <footer className="landing-footer">
         <div className="footer-content">
           <div className="footer-logo">
-            <img src="/logo.png" alt="AP Ace Logo" />
+            <img src="images/logo.png" alt="AP Ace Logo" />
             <h3>AP Ace</h3>
           </div>
           <div className="footer-links">

@@ -464,7 +464,7 @@ export default function LandingPage() {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="course-icon">
-                <img src={`/${course.icon}`} alt={course.name} />
+                <img src={`/images/${course.icon}`} alt={course.name} />
               </div>
               <h3>{course.name}</h3>
               <button className="course-btn">Explore</button>
