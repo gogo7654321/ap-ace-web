@@ -186,7 +186,7 @@ export default function LandingPage() {
         ></div>
         <div className="hero-content">
           <img 
-            src="/logo.png" 
+            src="images/logo.png" 
             alt="AP Ace Logo" 
             className="hero-logo"
             style={{ transform: `translateY(${-scrollPosition * 0.2}px)` }}
@@ -316,35 +316,35 @@ export default function LandingPage() {
       <section className="logo-marquee-section">
         <div className="logos">
           <div className="logos-slide">
-            <img src="/sprayberry.png" alt="Sprayberry" />
-            <img src="/south cobb.png" alt="South Cobb" />
-            <img src="/pope.png" alt="Pope" />
-            <img src="/pebblebrook.png" alt="Pebblebrook" />
-            <img src="/osborne.png" alt="Osborne" />
-            <img src="/north cobb.png" alt="North Cobb" />
-            <img src="/mceachern.png" alt="McEachern" />
-            <img src="/lassiter.png" alt="Lassiter" />
-            <img src="/kennesaw.png" alt="Kennesaw" />
-            <img src="/kell.png" alt="Kell" />
-            <img src="/hillgrove.png" alt="Hillgrove" />
-            <img src="/harrison.png" alt="Harrison" />
-            <img src="/campbell.png" alt="Campbell" />
-            <img src="/allatoona.png" alt="Allatoona" />
+            <img src="images/sprayberry.png" alt="Sprayberry" />
+            <img src="images/south cobb.png" alt="South Cobb" />
+            <img src="images/pope.png" alt="Pope" />
+            <img src="images/pebblebrook.png" alt="Pebblebrook" />
+            <img src="images/osborne.png" alt="Osborne" />
+            <img src="images/north cobb.png" alt="North Cobb" />
+            <img src="images/mceachern.png" alt="McEachern" />
+            <img src="images/lassiter.png" alt="Lassiter" />
+            <img src="images/kennesaw.png" alt="Kennesaw" />
+            <img src="images/kell.png" alt="Kell" />
+            <img src="images/hillgrove.png" alt="Hillgrove" />
+            <img src="images/harrison.png" alt="Harrison" />
+            <img src="images/campbell.png" alt="Campbell" />
+            <img src="images/allatoona.png" alt="Allatoona" />
             {/* Duplicate the logos for seamless looping */}
-            <img src="/sprayberry.png" alt="Sprayberry" />
-            <img src="/south cobb.png" alt="South Cobb" />
-            <img src="/pope.png" alt="Pope" />
-            <img src="/pebblebrook.png" alt="Pebblebrook" />
-            <img src="/osborne.png" alt="Osborne" />
-            <img src="/north cobb.png" alt="North Cobb" />
-            <img src="/mceachern.png" alt="McEachern" />
-            <img src="/lassiter.png" alt="Lassiter" />
-            <img src="/kennesaw.png" alt="Kennesaw" />
-            <img src="/kell.png" alt="Kell" />
-            <img src="/hillgrove.png" alt="Hillgrove" />
-            <img src="/harrison.png" alt="Harrison" />
-            <img src="/campbell.png" alt="Campbell" />
-            <img src="/allatoona.png" alt="Allatoona" />
+            <img src="images/sprayberry.png" alt="Sprayberry" />
+            <img src="images/south cobb.png" alt="South Cobb" />
+            <img src="images/pope.png" alt="Pope" />
+            <img src="images/pebblebrook.png" alt="Pebblebrook" />
+            <img src="images/osborne.png" alt="Osborne" />
+            <img src="images/north cobb.png" alt="North Cobb" />
+            <img src="images/mceachern.png" alt="McEachern" />
+            <img src="images/lassiter.png" alt="Lassiter" />
+            <img src="images/kennesaw.png" alt="Kennesaw" />
+            <img src="images/kell.png" alt="Kell" />
+            <img src="images/hillgrove.png" alt="Hillgrove" />
+            <img src="images/harrison.png" alt="Harrison" />
+            <img src="images/campbell.png" alt="Campbell" />
+            <img src="images/allatoona.png" alt="Allatoona" />
           </div>
         </div>
       </section>
@@ -497,7 +497,7 @@ export default function LandingPage() {
         <div className="testimonials-container">
           <div className="testimonial-card">
             <div className="testimonial-image">
-              <img src="/adam.JPEG" alt="Student" className="student-avatar" />
+              <img src="images/adam.JPEG" alt="Student" className="student-avatar" />
             </div>
             <div className="testimonial-stars">★★★★★</div>
             <p className="testimonial-text">"AP Ace helped me organize my study schedule and focus on my weak areas. I improved from a 3 to a 5 on my AP Human exam!"</p>
@@ -506,7 +506,7 @@ export default function LandingPage() {
           
           <div className="testimonial-card">
             <div className="testimonial-image">
-              <img src="/mann.jpeg" alt="Student" className="student-avatar" />
+              <img src="images/mann.jpeg" alt="Student" className="student-avatar" />
             </div>
             <div className="testimonial-stars">★★★★★</div>
             <p className="testimonial-text">"The practice questions are spot-on! They really match the difficulty and style of the actual AP exams. Highly recommend!"</p>
@@ -515,7 +515,7 @@ export default function LandingPage() {
           
           <div className="testimonial-card">
             <div className="testimonial-image">
-              <img src="/gabe.jpeg" alt="Student" className="student-avatar" />
+              <img src="images/gabe.jpeg" alt="Student" className="student-avatar" />
             </div>
             <div className="testimonial-stars">★★★★★</div>
             <p className="testimonial-text">"AP Ace's detailed explanations for each practice question helped me understand complex concepts I had been struggling with."</p>
@@ -528,7 +528,7 @@ export default function LandingPage() {
       <footer className="landing-footer">
         <div className="footer-content">
           <div className="footer-logo">
-            <img src="/logo.png" alt="AP Ace Logo" />
+            <img src="images/logo.png" alt="AP Ace Logo" />
             <h3>AP Ace</h3>
           </div>
           <div className="footer-links">
