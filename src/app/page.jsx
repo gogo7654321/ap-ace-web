@@ -451,28 +451,32 @@ export default function LandingPage() {
 
       {/* Courses Section with Custom Icons */}
       <section className="courses-section" ref={coursesRef}>
-        <div className="section-header">
-          <h2>Popular AP Courses</h2>
-          <div className="underline"></div>
-        </div>
+  <div className="section-header">
+    <h2>Popular AP Courses</h2>
+    <div className="underline"></div>
+  </div>
 
-        <div className="courses-grid">
-          {popularCourses.map((course, index) => (
-            <div 
-              key={index} 
-              className={`course-card ${isVisible.courses ? 'animate-fade-in' : ''}`}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <div className="course-icon">
-              <img src={`/images/${course.icon}.svg`} alt={course.name} />
-              </div>
-              <h3>{course.name}</h3>
-              <button className="course-btn">Explore</button>
-            </div>
-          ))}
+  <div className="courses-grid">
+    {popularCourses.map((course, index) => (
+      <div
+        key={index}
+        className={`course-card ${isVisible.courses ? 'animate-fade-in' : ''}`}
+        style={{ transitionDelay: `${index * 100}ms` }}
+      >
+        <div className="course-icon">
+          <img
+            src={`${
+              process.env.NODE_ENV === 'production' ? '/ap-ace-web' : ''
+            }/images/${course.icon}.svg`}
+            alt={course.name}
+          />
         </div>
-      </section>
-
+        <h3>{course.name}</h3>
+        <button className="course-btn">Explore</button>
+      </div>
+    ))}
+  </div>
+</section>
       {/* Final CTA with Parallax */}
       <section 
         className="cta-section"
