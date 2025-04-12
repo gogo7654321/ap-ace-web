@@ -463,22 +463,22 @@ export default function LandingPage() {
       let iconPath = '';
       switch (course.name) {
         case 'AP Biology':
-          iconPath = '/images/ap-bio.svg';
+          iconPath = '/images/ap_biology.svg';
           break;
         case 'AP Calculus AB':
-          iconPath = '/images/ap-calc-ab.svg';
+          iconPath = '/images/ap_calculus_ab.svg';
           break;
         case 'AP Calculus BC':
-          iconPath = '/images/ap-calc-bc.svg';
+          iconPath = '/images/ap_calculus_bc.svg';
           break;
         case 'AP Chemistry':
-          iconPath = '/images/ap-chem.svg';
+          iconPath = '/images/ap_chemistry.svg';
           break;
         case 'AP Computer Science A':
-          iconPath = '/images/ap-cs-a.svg';
+          iconPath = '/images/ap_computer_science_a.svg';
           break;
         case 'AP Computer Science Principles':
-          iconPath = '/images/ap-csp.svg';
+          iconPath = '/images/ap_computer_science_principles.svg';
           break;
         case 'AP English Language':
           iconPath = '/images/ap-lang.svg';
