@@ -481,40 +481,40 @@ export default function LandingPage() {
           iconPath = '/images/ap_computer_science_principles.svg';
           break;
         case 'AP English Language':
-          iconPath = '/images/ap-lang.svg';
+          iconPath = '/images/ap_english_language_and_composition.svg';
           break;
         case 'AP English Literature':
-          iconPath = '/images/ap-lit.svg';
+          iconPath = '/images/ap_english_literature_and_composition.svg';
           break;
         case 'AP Environmental Science':
-          iconPath = '/images/ap-envsci.svg';
+          iconPath = '/images/ap_environmental_science.svg';
           break;
         case 'AP Human Geography':
-          iconPath = '/images/ap-hug.svg';
+          iconPath = '/images/ap_human_geography.svg';
           break;
         case 'AP Macroeconomics':
-          iconPath = '/images/ap-macro.svg';
+          iconPath = '/images/ap_macroeconomics.svg';
           break;
         case 'AP Microeconomics':
-          iconPath = '/images/ap-micro.svg';
+          iconPath = '/images/ap_microeconomics.svg';
           break;
         case 'AP Physics 1':
-          iconPath = '/images/ap-phys1.svg';
+          iconPath = '/images/ap_physics_1_algebra_based.svgg';
           break;
         case 'AP Psychology':
-          iconPath = '/images/ap-psych.svg';
+          iconPath = '/images/ap_psychology.svg';
           break;
         case 'AP Statistics':
-          iconPath = '/images/ap-stats.svg';
+          iconPath = '/images/ap_statistics.svg';
           break;
         case 'AP U.S. Government':
-          iconPath = '/images/ap-gov.svg';
+          iconPath = '/images/ap_united_states_government_and_politics.svg';
           break;
         case 'AP U.S. History':
-          iconPath = '/images/apush.svg';
+          iconPath = '/images/ap_united_states_history.svg';
           break;
         case 'AP World History':
-          iconPath = '/images/ap-world.svg';
+          iconPath = '/images/ap_world_history_modern.svg';
           break;
         default:
           iconPath = '/images/default.svg';
