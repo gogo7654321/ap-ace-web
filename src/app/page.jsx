@@ -449,7 +449,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Courses Section with Custom Icons */}
+            {/* Courses Section with Custom Icons */}
       <section className="courses-section" ref={coursesRef}>
         <div className="section-header">
           <h2>Popular AP Courses</h2>
@@ -457,24 +457,101 @@ export default function LandingPage() {
         </div>
 
         <div className="courses-grid">
-          {popularCourses.map((course, index) => {
-            // Convert course name to URL format (replace underscores with hyphens and remove .svg)
-            const courseUrl = course.icon.replace('_', '-').replace('.svg', '');
-            
-            return (
-              <div 
-                key={index} 
-                className={`course-card ${isVisible.courses ? 'animate-fade-in' : ''}`}
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <div className="course-icon">
-                  <img src={`/images/${course.icon}`} alt={course.name} />
-                </div>
-                <h3>{course.name}</h3>
-                <Link href={`/${courseUrl}`} className="course-btn">Explore</Link>
-              </div>
-            );
-          })}
+          {/* Calculus AB */}
+          <div 
+            className={`course-card ${isVisible.courses ? 'animate-fade-in' : ''}`}
+            style={{ transitionDelay: '0ms' }}
+          >
+            <div className="course-icon">
+              <img src="images/ap_calculus_ab.svg" alt="Calculus AB" />
+            </div>
+            <h3>Calculus AB</h3>
+            <Link href="/ap-calculus-ab" className="course-btn">Explore</Link>
+          </div>
+          
+          {/* US History */}
+          <div 
+            className={`course-card ${isVisible.courses ? 'animate-fade-in' : ''}`}
+            style={{ transitionDelay: '100ms' }}
+          >
+            <div className="course-icon">
+              <img src="images/ap_united_states_history.svg" alt="US History" />
+            </div>
+            <h3>US History</h3>
+            <Link href="/ap-united-states-history" className="course-btn">Explore</Link>
+          </div>
+          
+          {/* English Language */}
+          <div 
+            className={`course-card ${isVisible.courses ? 'animate-fade-in' : ''}`}
+            style={{ transitionDelay: '200ms' }}
+          >
+            <div className="course-icon">
+              <img src="images/ap_english_language_and_composition.svg" alt="English Language" />
+            </div>
+            <h3>English Language</h3>
+            <Link href="/ap-english-language-and-composition" className="course-btn">Explore</Link>
+          </div>
+          
+          {/* Psychology */}
+          <div 
+            className={`course-card ${isVisible.courses ? 'animate-fade-in' : ''}`}
+            style={{ transitionDelay: '300ms' }}
+          >
+            <div className="course-icon">
+              <img src="images/ap_psychology.svg" alt="Psychology" />
+            </div>
+            <h3>Psychology</h3>
+            <Link href="/ap-psychology" className="course-btn">Explore</Link>
+          </div>
+          
+          {/* Biology */}
+          <div 
+            className={`course-card ${isVisible.courses ? 'animate-fade-in' : ''}`}
+            style={{ transitionDelay: '400ms' }}
+          >
+            <div className="course-icon">
+              <img src="images/ap_biology.svg" alt="Biology" />
+            </div>
+            <h3>Biology</h3>
+            <Link href="/ap-biology" className="course-btn">Explore</Link>
+          </div>
+          
+          {/* Statistics */}
+          <div 
+            className={`course-card ${isVisible.courses ? 'animate-fade-in' : ''}`}
+            style={{ transitionDelay: '500ms' }}
+          >
+            <div className="course-icon">
+              <img src="images/ap_statistics.svg" alt="Statistics" />
+            </div>
+            <h3>Statistics</h3>
+            <Link href="/ap-statistics" className="course-btn">Explore</Link>
+          </div>
+          
+          {/* World History */}
+          <div 
+            className={`course-card ${isVisible.courses ? 'animate-fade-in' : ''}`}
+            style={{ transitionDelay: '600ms' }}
+          >
+            <div className="course-icon">
+              <img src="images/ap_world_history_modern.svg" alt="World History" />
+            </div>
+            <h3>World History</h3>
+            <Link href="/ap-world-history-modern" className="course-btn">Explore</Link>
+          </div>
+          
+          {/* Computer Science Principles */}
+          <div 
+            className={`course-card ${isVisible.courses ? 'animate-fade-in' : ''}`}
+            style={{ transitionDelay: '700ms' }}
+          >
+            <div className="course-icon">
+              <img src="images/ap_computer_science_principles.svg" alt="Computer Science Principles" />
+            </div>
+            <h3>Computer Science Principles</h3>
+            <Link href="/ap-computer-science-principles" className="course-btn">Explore</Link>
+          </div>
         </div>
       </section>
 

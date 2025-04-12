@@ -1,13 +1,11 @@
-const isProd = process.env.NODE_ENV === 'production';
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  basePath: isProd ? '/ap-ace-web' : '',
-  assetPrefix: isProd ? '/ap-ace-web/' : '',
+  output: 'export', // Required for GitHub Pages static export
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
   images: {
-    unoptimized: true, // <-- Important for static exports on GitHub Pages
+    unoptimized: true, // Required for static export
   },
-};
+}
 
-export default nextConfig;
+module.exports = nextConfig
