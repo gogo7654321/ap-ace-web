@@ -472,7 +472,7 @@ export default function LandingPage() {
           />
         </div>
         <h3>{course.name}</h3>
-        <button className="course-btn">Explore</button>
+        <button className="course-btn">Expre</button>
       </div>
     ))}
   </div>
