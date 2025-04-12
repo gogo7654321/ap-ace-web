@@ -527,7 +527,7 @@ export default function LandingPage() {
           style={{ transitionDelay: `${index * 100}ms` }}
         >
           <h3>{course.name}</h3>
-          <button className="course-btn">Exore</button>
+          <button className="course-btn">Explore</button>
         </div>
       );
     })}
