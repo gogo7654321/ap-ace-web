@@ -526,9 +526,6 @@ export default function LandingPage() {
           className={`course-card ${isVisible.courses ? 'animate-fade-in' : ''}`}
           style={{ transitionDelay: `${index * 100}ms` }}
         >
-          <div className="course-icon">
-            <img src={iconPath} alt={course.name} />
-          </div>
           <h3>{course.name}</h3>
           <button className="course-btn">Explore</button>
         </div>
