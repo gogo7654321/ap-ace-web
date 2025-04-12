@@ -463,7 +463,7 @@ export default function LandingPage() {
             style={{ transitionDelay: '0ms' }}
           >
             <div className="course-icon">
-              <img src="images/ap_calculus_ab.svg" alt="Calculus AB" />
+              <img src="/images/ap_calculus_ab.svg" alt="Calculus AB" />
             </div>
             <h3>Calculus AB</h3>
             <Link href="/ap-calculus-ab" className="course-btn">Explore</Link>
@@ -475,7 +475,7 @@ export default function LandingPage() {
             style={{ transitionDelay: '100ms' }}
           >
             <div className="course-icon">
-              <img src="images/ap_united_states_history.svg" alt="US History" />
+              <img src="/images/ap_united_states_history.svg" alt="US History" />
             </div>
             <h3>US History</h3>
             <Link href="/ap-united-states-history" className="course-btn">Explore</Link>
@@ -487,7 +487,7 @@ export default function LandingPage() {
             style={{ transitionDelay: '200ms' }}
           >
             <div className="course-icon">
-              <img src="images/ap_english_language_and_composition.svg" alt="English Language" />
+              <img src="/images/ap_english_language_and_composition.svg" alt="English Language" />
             </div>
             <h3>English Language</h3>
             <Link href="/ap-english-language-and-composition" className="course-btn">Explore</Link>
@@ -499,7 +499,7 @@ export default function LandingPage() {
             style={{ transitionDelay: '300ms' }}
           >
             <div className="course-icon">
-              <img src="images/ap_psychology.svg" alt="Psychology" />
+              <img src="/images/ap_psychology.svg" alt="Psychology" />
             </div>
             <h3>Psychology</h3>
             <Link href="/ap-psychology" className="course-btn">Explore</Link>
@@ -511,7 +511,7 @@ export default function LandingPage() {
             style={{ transitionDelay: '400ms' }}
           >
             <div className="course-icon">
-              <img src="images/ap_biology.svg" alt="Biology" />
+              <img src="/images/ap_biology.svg" alt="Biology" />
             </div>
             <h3>Biology</h3>
             <Link href="/ap-biology" className="course-btn">Explore</Link>
@@ -523,7 +523,7 @@ export default function LandingPage() {
             style={{ transitionDelay: '500ms' }}
           >
             <div className="course-icon">
-              <img src="images/ap_statistics.svg" alt="Statistics" />
+              <img src="/images/ap_statistics.svg" alt="Statistics" />
             </div>
             <h3>Statistics</h3>
             <Link href="/ap-statistics" className="course-btn">Explore</Link>
@@ -535,7 +535,7 @@ export default function LandingPage() {
             style={{ transitionDelay: '600ms' }}
           >
             <div className="course-icon">
-              <img src="images/ap_world_history_modern.svg" alt="World History" />
+              <img src="/images/ap_world_history_modern.svg" alt="World History" />
             </div>
             <h3>World History</h3>
             <Link href="/ap-world-history-modern" className="course-btn">Explore</Link>
@@ -547,7 +547,7 @@ export default function LandingPage() {
             style={{ transitionDelay: '700ms' }}
           >
             <div className="course-icon">
-              <img src="images/ap_computer_science_principles.svg" alt="Computer Science Principles" />
+              <img src="/images/ap_computer_science_principles.svg" alt="Computer Science Principles" />
             </div>
             <h3>Computer Science Principles</h3>
             <Link href="/ap-computer-science-principles" className="course-btn">Explore</Link>
