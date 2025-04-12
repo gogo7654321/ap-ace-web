@@ -450,90 +450,33 @@ export default function LandingPage() {
       </section>
 
       {/* Courses Section with Custom Icons */}
-
-<section className="courses-section" ref={coursesRef}>
-  <div className="section-header">
-    <h2>Popular AP Courses</h2>
-    <div className="underline"></div>
-  </div>
-
-  <div className="courses-grid">
-    {popularCourses.map((course, index) => {
-      // Manually assign each icon based on course name
-      let iconPath = '';
-      switch (course.name) {
-        case 'AP Biology':
-          iconPath = '/images/ap_biology.svg';
-          break;
-        case 'AP Calculus AB':
-          iconPath = '/images/ap_calculus_ab.svg';
-          break;
-        case 'AP Calculus BC':
-          iconPath = '/images/ap_calculus_bc.svg';
-          break;
-        case 'AP Chemistry':
-          iconPath = '/images/ap_chemistry.svg';
-          break;
-        case 'AP Computer Science A':
-          iconPath = '/images/ap_computer_science_a.svg';
-          break;
-        case 'AP Computer Science Principles':
-          iconPath = '/images/ap_computer_science_principles.svg';
-          break;
-        case 'AP English Language':
-          iconPath = '/images/ap_english_language_and_composition.svg';
-          break;
-        case 'AP English Literature':
-          iconPath = '/images/ap_english_literature_and_composition.svg';
-          break;
-        case 'AP Environmental Science':
-          iconPath = '/images/ap_environmental_science.svg';
-          break;
-        case 'AP Human Geography':
-          iconPath = '/images/ap_human_geography.svg';
-          break;
-        case 'AP Macroeconomics':
-          iconPath = '/images/ap_macroeconomics.svg';
-          break;
-        case 'AP Microeconomics':
-          iconPath = '/images/ap_microeconomics.svg';
-          break;
-        case 'AP Physics 1':
-          iconPath = '/images/ap_physics_1_algebra_based.svgg';
-          break;
-        case 'AP Psychology':
-          iconPath = '/images/ap_psychology.svg';
-          break;
-        case 'AP Statistics':
-          iconPath = '/images/ap_statistics.svg';
-          break;
-        case 'AP U.S. Government':
-          iconPath = '/images/ap_united_states_government_and_politics.svg';
-          break;
-        case 'AP U.S. History':
-          iconPath = '/images/ap_united_states_history.svg';
-          break;
-        case 'AP World History':
-          iconPath = '/images/ap_world_history_modern.svg';
-          break;
-        default:
-          iconPath = '/images/default.svg';
-      }
-
-      return (
-        <div 
-          key={index} 
-          className={`course-card ${isVisible.courses ? 'animate-fade-in' : ''}`}
-          style={{ transitionDelay: `${index * 100}ms` }}
-        >
-          <h3>{course.name}</h3>
-          <button className="course-btn">Explore</button>
+      <section className="courses-section" ref={coursesRef}>
+        <div className="section-header">
+          <h2>Popular AP Courses</h2>
+          <div className="underline"></div>
         </div>
-      );
-    })}
-  </div>
-</section>
 
+        <div className="courses-grid">
+          {popularCourses.map((course, index) => {
+            // Convert course name to URL format (replace underscores with hyphens and remove .svg)
+            const courseUrl = course.icon.replace('_', '-').replace('.svg', '');
+            
+            return (
+              <div 
+                key={index} 
+                className={`course-card ${isVisible.courses ? 'animate-fade-in' : ''}`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <div className="course-icon">
+                  <img src={`/images/${course.icon}`} alt={course.name} />
+                </div>
+                <h3>{course.name}</h3>
+                <Link href={`/${courseUrl}`} className="course-btn">Explore</Link>
+              </div>
+            );
+          })}
+        </div>
+      </section>
 
       {/* Final CTA with Parallax */}
       <section 
