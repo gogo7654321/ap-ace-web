@@ -450,33 +450,94 @@ export default function LandingPage() {
       </section>
 
       {/* Courses Section with Custom Icons */}
-      <section className="courses-section" ref={coursesRef}>
+
+<section className="courses-section" ref={coursesRef}>
   <div className="section-header">
     <h2>Popular AP Courses</h2>
     <div className="underline"></div>
   </div>
 
   <div className="courses-grid">
-    {popularCourses.map((course, index) => (
-      <div
-        key={index}
-        className={`course-card ${isVisible.courses ? 'animate-fade-in' : ''}`}
-        style={{ transitionDelay: `${index * 100}ms` }}
-      >
-        <div className="course-icon">
-          <img
-            src={`${
-              process.env.NODE_ENV === 'production' ? '/ap-ace-web' : ''
-            }/images/${course.icon}.svg`}
-            alt={course.name}
-          />
+    {popularCourses.map((course, index) => {
+      // Manually assign each icon based on course name
+      let iconPath = '';
+      switch (course.name) {
+        case 'AP Biology':
+          iconPath = '/images/ap-bio.svg';
+          break;
+        case 'AP Calculus AB':
+          iconPath = '/images/ap-calc-ab.svg';
+          break;
+        case 'AP Calculus BC':
+          iconPath = '/images/ap-calc-bc.svg';
+          break;
+        case 'AP Chemistry':
+          iconPath = '/images/ap-chem.svg';
+          break;
+        case 'AP Computer Science A':
+          iconPath = '/images/ap-cs-a.svg';
+          break;
+        case 'AP Computer Science Principles':
+          iconPath = '/images/ap-csp.svg';
+          break;
+        case 'AP English Language':
+          iconPath = '/images/ap-lang.svg';
+          break;
+        case 'AP English Literature':
+          iconPath = '/images/ap-lit.svg';
+          break;
+        case 'AP Environmental Science':
+          iconPath = '/images/ap-envsci.svg';
+          break;
+        case 'AP Human Geography':
+          iconPath = '/images/ap-hug.svg';
+          break;
+        case 'AP Macroeconomics':
+          iconPath = '/images/ap-macro.svg';
+          break;
+        case 'AP Microeconomics':
+          iconPath = '/images/ap-micro.svg';
+          break;
+        case 'AP Physics 1':
+          iconPath = '/images/ap-phys1.svg';
+          break;
+        case 'AP Psychology':
+          iconPath = '/images/ap-psych.svg';
+          break;
+        case 'AP Statistics':
+          iconPath = '/images/ap-stats.svg';
+          break;
+        case 'AP U.S. Government':
+          iconPath = '/images/ap-gov.svg';
+          break;
+        case 'AP U.S. History':
+          iconPath = '/images/apush.svg';
+          break;
+        case 'AP World History':
+          iconPath = '/images/ap-world.svg';
+          break;
+        default:
+          iconPath = '/images/default.svg';
+      }
+
+      return (
+        <div 
+          key={index} 
+          className={`course-card ${isVisible.courses ? 'animate-fade-in' : ''}`}
+          style={{ transitionDelay: `${index * 100}ms` }}
+        >
+          <div className="course-icon">
+            <img src={iconPath} alt={course.name} />
+          </div>
+          <h3>{course.name}</h3>
+          <button className="course-btn">Explore</button>
         </div>
-        <h3>{course.name}</h3>
-        <button className="course-btn">Expre</button>
-      </div>
-    ))}
+      );
+    })}
   </div>
 </section>
+
+
       {/* Final CTA with Parallax */}
       <section 
         className="cta-section"
