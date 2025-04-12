@@ -112,26 +112,29 @@ html, body {
   margin-top: 24px;
 }
 
+/* === CTA BUTTON - visible on white bg and pops before hover === */
 .cta-button {
   background-color: white;
   color: var(--primary-dark-blue);
-  padding: 15px 35px;
-  border: none;
-  border-radius: 12px;
+  padding: 12px 24px;
+  border: 2px solid var(--primary-dark-blue);
+  border-radius: 10px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
+  text-decoration: none;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  text-decoration: none;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 51, 102, 0.1), 0 0 5px rgba(0, 51, 102, 0.05);
 }
 
 .cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  background-color: var(--primary-dark-blue);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .btn-icon {
@@ -139,9 +142,28 @@ html, body {
 }
 
 .cta-button:hover .btn-icon {
-  transform: translateX(4px);
+  transform: translateX(3px);
 }
 
+.secondary-button {
+  background: transparent;
+  color: white;
+  padding: 14px 34px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.secondary-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  transform: translateY(-3px);
+}
 .secondary-button {
   background: transparent;
   color: white;

@@ -186,7 +186,12 @@ const APClassTemplate = () => {
             </div>
           </div>
         </div>
-      </div>
+          <div style={{ textAlign: 'center', marginTop: '40px' }}>
+      <a href="/ap-research/calc" className="cta-button">
+        Try Our AP® Research Score Calculator <span className="btn-icon">→</span>
+      </a>
+    </div>
+  </div>
 
       {/* Quote section with fixed parallax effect */}
       <div className="quote-section">

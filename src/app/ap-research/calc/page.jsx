@@ -127,7 +127,7 @@ const APResearchCalculator = () => {
         backgroundColor: 'var(--bg-light)' 
       }}>
         <div className="header-logo" style={{ marginBottom: '20px' }}>
-          <img src="images/ap_research.png" alt="AP® Research Logo" style={{ maxHeight: '80px' }} />
+          <img src="/images/ap_research.png" alt="AP® Research Logo" style={{ maxHeight: '80px' }} />
         </div>
         <h1 style={{ color: 'var(--primary-dark-blue)', marginBottom: '15px' }}>AP® Research Score Calculator</h1>
         <p style={{ color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto' }}>
@@ -135,334 +135,353 @@ const APResearchCalculator = () => {
         </p>
       </div>
 
-      {/* Calculator section */}
+      {/* Calculator section with side-by-side layout */}
       <div id="calculator" className="features-section" style={{ paddingTop: '30px' }}>
-        <div className="calculator-container" style={{ maxWidth: '800px', margin: '0 auto', padding: '30px', backgroundColor: 'white', borderRadius: '16px', boxShadow: '0 10px 40px rgba(0, 0, 0, 0.06)' }}>
-          <div className="calculator-component">
-            {/* Academic Paper Slider */}
-            <div className="score-slider-group" style={{ marginBottom: '40px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
-                <h3 style={{ color: 'var(--primary-dark-blue)', fontSize: '1.3rem' }}>Academic Paper (4,000–5,000 words)</h3>
-                <span style={{ fontWeight: 'bold', fontSize: '1.2rem', color: 'var(--primary-accent)' }}>{paperScore}%</span>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '5px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                <span>College Board scored (75% of total)</span>
-              </div>
-              <input 
-                type="range" 
-                min="0" 
-                max="100" 
-                value={paperScore} 
-                onChange={(e) => setPaperScore(parseInt(e.target.value))}
-                style={{ 
-                  width: '100%', 
-                  height: '10px',
-                  borderRadius: '5px',
-                  background: `linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end))`,
-                  outline: 'none',
-                  appearance: 'none',
-                  cursor: 'pointer'
-                }}
-              />
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
-                <span>0%</span>
-                <span>100%</span>
-              </div>
-            </div>
-            
-            {/* Presentation and Oral Defense Section */}
-            <div style={{ 
-              marginBottom: '40px', 
-              padding: '20px', 
-              backgroundColor: 'var(--bg-gray)', 
-              borderRadius: '12px'
-            }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                <h3 style={{ color: 'var(--primary-dark-blue)', fontSize: '1.3rem' }}>Presentation and Oral Defense</h3>
-                <span style={{ fontWeight: 'bold', fontSize: '1.2rem', color: 'var(--primary-accent)' }}>
-                  {presentationTotalScore}/24 ({Math.round(presentationPercentage)}%)
-                </span>
-              </div>
-              <div style={{ marginBottom: '5px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                <span>Teacher scored (25% of total)</span>
+        <div className="calculator-container" style={{ 
+          maxWidth: '1000px', 
+          margin: '0 auto', 
+          padding: '30px', 
+          backgroundColor: 'white', 
+          borderRadius: '16px', 
+          boxShadow: '0 10px 40px rgba(0, 0, 0, 0.06)' 
+        }}>
+          <div className="calculator-component" style={{ display: 'flex', flexDirection: 'row', gap: '30px' }}>
+            {/* Left column - Sliders */}
+            <div style={{ flex: '1', minWidth: '0' }}>
+              {/* Academic Paper Slider */}
+              <div className="score-slider-group" style={{ marginBottom: '40px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
+                  <h3 style={{ color: 'var(--primary-dark-blue)', fontSize: '1.3rem' }}>Academic Paper</h3>
+                  <span style={{ fontWeight: 'bold', fontSize: '1.2rem', color: 'var(--primary-accent)' }}>{paperScore}%</span>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '5px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                  <span>College Board scored (75% of total)</span>
+                </div>
+                <input 
+                  type="range" 
+                  min="0" 
+                  max="100" 
+                  value={paperScore} 
+                  onChange={(e) => setPaperScore(parseInt(e.target.value))}
+                  style={{ 
+                    width: '100%', 
+                    height: '10px',
+                    borderRadius: '5px',
+                    background: `linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end))`,
+                    outline: 'none',
+                    appearance: 'none',
+                    cursor: 'pointer'
+                  }}
+                />
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '5px', fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
+                  <span>0%</span>
+                  <span>100%</span>
+                </div>
               </div>
               
-              {/* Detailed categories */}
-              <div style={{ marginTop: '20px' }}>
-                {/* Designs Research */}
-                <div style={{ marginBottom: '15px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
-                    <span style={{ fontWeight: '500' }}>Designs Research </span>
-                    <span style={{ fontWeight: 'bold', color: 'var(--primary-accent)' }}>{designsResearch}/3</span>
-                  </div>
-                  <input 
-                    type="range" 
-                    min="0" 
-                    max="3" 
-                    step="1"
-                    value={designsResearch} 
-                    onChange={(e) => setDesignsResearch(parseInt(e.target.value))}
-                    style={{ 
-                      width: '100%', 
-                      height: '8px',
-                      borderRadius: '4px',
-                      background: `linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end))`,
-                      outline: 'none',
-                      appearance: 'none',
-                      cursor: 'pointer'
-                    }}
-                  />
-                </div>
-                
-                {/* Establishes Argument */}
-                <div style={{ marginBottom: '15px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
-                    <span style={{ fontWeight: '500' }}>Establishes Argument </span>
-                    <span style={{ fontWeight: 'bold', color: 'var(--primary-accent)' }}>{establishesArgument}/6</span>
-                  </div>
-                  <input 
-                    type="range" 
-                    min="0" 
-                    max="6" 
-                    step="1"
-                    value={establishesArgument} 
-                    onChange={(e) => setEstablishesArgument(parseInt(e.target.value))}
-                    style={{ 
-                      width: '100%', 
-                      height: '8px',
-                      borderRadius: '4px',
-                      background: `linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end))`,
-                      outline: 'none',
-                      appearance: 'none',
-                      cursor: 'pointer'
-                    }}
-                  />
-                </div>
-                
-                {/* Reflects on Findings */}
-                <div style={{ marginBottom: '15px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
-                    <span style={{ fontWeight: '500' }}>Reflects on Findings </span>
-                    <span style={{ fontWeight: 'bold', color: 'var(--primary-accent)' }}>{reflectsOnFindings}/3</span>
-                  </div>
-                  <input 
-                    type="range" 
-                    min="0" 
-                    max="3" 
-                    step="1"
-                    value={reflectsOnFindings} 
-                    onChange={(e) => setReflectsOnFindings(parseInt(e.target.value))}
-                    style={{ 
-                      width: '100%', 
-                      height: '8px',
-                      borderRadius: '4px',
-                      background: `linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end))`,
-                      outline: 'none',
-                      appearance: 'none',
-                      cursor: 'pointer'
-                    }}
-                  />
-                </div>
-                
-                {/* Engages Audience */}
-                <div style={{ marginBottom: '15px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
-                    <span style={{ fontWeight: '500' }}>Engages Audience </span>
-                    <span style={{ fontWeight: 'bold', color: 'var(--primary-accent)' }}>{engagesAudience}/6</span>
-                  </div>
-                  <input 
-                    type="range" 
-                    min="0" 
-                    max="6" 
-                    step="1"
-                    value={engagesAudience} 
-                    onChange={(e) => setEngagesAudience(parseInt(e.target.value))}
-                    style={{ 
-                      width: '100%', 
-                      height: '8px',
-                      borderRadius: '4px',
-                      background: `linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end))`,
-                      outline: 'none',
-                      appearance: 'none',
-                      cursor: 'pointer'
-                    }}
-                  />
-                </div>
-                
-                {/* Explains Rationale */}
-                <div style={{ marginBottom: '15px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
-                    <span style={{ fontWeight: '500' }}>Explains Rationale </span>
-                    <span style={{ fontWeight: 'bold', color: 'var(--primary-accent)' }}>{explainsRationale}/2</span>
-                  </div>
-                  <input 
-                    type="range" 
-                    min="0" 
-                    max="2" 
-                    step="1"
-                    value={explainsRationale} 
-                    onChange={(e) => setExplainsRationale(parseInt(e.target.value))}
-                    style={{ 
-                      width: '100%', 
-                      height: '8px',
-                      borderRadius: '4px',
-                      background: `linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end))`,
-                      outline: 'none',
-                      appearance: 'none',
-                      cursor: 'pointer'
-                    }}
-                  />
-                </div>
-                
-                {/* Provides Detail */}
-                <div style={{ marginBottom: '15px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
-                    <span style={{ fontWeight: '500' }}>Provides Detail </span>
-                    <span style={{ fontWeight: 'bold', color: 'var(--primary-accent)' }}>{providesDetail}/2</span>
-                  </div>
-                  <input 
-                    type="range" 
-                    min="0" 
-                    max="2" 
-                    step="1"
-                    value={providesDetail} 
-                    onChange={(e) => setProvidesDetail(parseInt(e.target.value))}
-                    style={{ 
-                      width: '100%', 
-                      height: '8px',
-                      borderRadius: '4px',
-                      background: `linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end))`,
-                      outline: 'none',
-                      appearance: 'none',
-                      cursor: 'pointer'
-                    }}
-                  />
-                </div>
-                
-                {/* Demonstrates Significance */}
-                <div style={{ marginBottom: '5px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
-                    <span style={{ fontWeight: '500' }}>Demonstrates Significance (2)</span>
-                    <span style={{ fontWeight: 'bold', color: 'var(--primary-accent)' }}>{demonstratesSignificance}/2</span>
-                  </div>
-                  <input 
-                    type="range" 
-                    min="0" 
-                    max="2" 
-                    step="1"
-                    value={demonstratesSignificance} 
-                    onChange={(e) => setDemonstratesSignificance(parseInt(e.target.value))}
-                    style={{ 
-                      width: '100%', 
-                      height: '8px',
-                      borderRadius: '4px',
-                      background: `linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end))`,
-                      outline: 'none',
-                      appearance: 'none',
-                      cursor: 'pointer'
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-            
-            {/* Total Score out of 100 */}
-            <div style={{ 
-              marginBottom: '30px', 
-              padding: '15px', 
-              backgroundColor: 'rgba(59, 130, 246, 0.1)', 
-              borderRadius: '8px',
-              textAlign: 'center'
-            }}>
-              <h3 style={{ color: 'var(--primary-dark-blue)', marginBottom: '10px' }}>Total Weighted Score</h3>
+              {/* Presentation and Oral Defense Section */}
               <div style={{ 
-                fontSize: '2.5rem', 
-                fontWeight: 'bold', 
-                color: 'var(--primary-accent)' 
+                marginBottom: '40px', 
+                padding: '20px', 
+                backgroundColor: 'var(--bg-gray)', 
+                borderRadius: '12px'
               }}>
-                {totalWeightedScore}/100
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+                  <h3 style={{ color: 'var(--primary-dark-blue)', fontSize: '1.3rem' }}>Presentation and Oral Defense</h3>
+                  <span style={{ fontWeight: 'bold', fontSize: '1.2rem', color: 'var(--primary-accent)' }}>
+                    {presentationTotalScore}/24 ({Math.round(presentationPercentage)}%)
+                  </span>
+                </div>
+                <div style={{ marginBottom: '5px', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                  <span>Teacher scored (25% of total)</span>
+                </div>
+                
+                {/* Detailed categories */}
+                <div style={{ marginTop: '20px' }}>
+                  {/* Designs Research */}
+                  <div style={{ marginBottom: '15px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
+                      <span style={{ fontWeight: '500' }}>Designs Research </span>
+                      <span style={{ fontWeight: 'bold', color: 'var(--primary-accent)' }}>{designsResearch}/3</span>
+                    </div>
+                    <input 
+                      type="range" 
+                      min="0" 
+                      max="3" 
+                      step="1"
+                      value={designsResearch} 
+                      onChange={(e) => setDesignsResearch(parseInt(e.target.value))}
+                      style={{ 
+                        width: '100%', 
+                        height: '8px',
+                        borderRadius: '4px',
+                        background: `linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end))`,
+                        outline: 'none',
+                        appearance: 'none',
+                        cursor: 'pointer'
+                      }}
+                    />
+                  </div>
+                  
+                  {/* Establishes Argument */}
+                  <div style={{ marginBottom: '15px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
+                      <span style={{ fontWeight: '500' }}>Establishes Argument </span>
+                      <span style={{ fontWeight: 'bold', color: 'var(--primary-accent)' }}>{establishesArgument}/6</span>
+                    </div>
+                    <input 
+                      type="range" 
+                      min="0" 
+                      max="6" 
+                      step="1"
+                      value={establishesArgument} 
+                      onChange={(e) => setEstablishesArgument(parseInt(e.target.value))}
+                      style={{ 
+                        width: '100%', 
+                        height: '8px',
+                        borderRadius: '4px',
+                        background: `linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end))`,
+                        outline: 'none',
+                        appearance: 'none',
+                        cursor: 'pointer'
+                      }}
+                    />
+                  </div>
+                  
+                  {/* Reflects on Findings */}
+                  <div style={{ marginBottom: '15px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
+                      <span style={{ fontWeight: '500' }}>Reflects on Findings </span>
+                      <span style={{ fontWeight: 'bold', color: 'var(--primary-accent)' }}>{reflectsOnFindings}/3</span>
+                    </div>
+                    <input 
+                      type="range" 
+                      min="0" 
+                      max="3" 
+                      step="1"
+                      value={reflectsOnFindings} 
+                      onChange={(e) => setReflectsOnFindings(parseInt(e.target.value))}
+                      style={{ 
+                        width: '100%', 
+                        height: '8px',
+                        borderRadius: '4px',
+                        background: `linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end))`,
+                        outline: 'none',
+                        appearance: 'none',
+                        cursor: 'pointer'
+                      }}
+                    />
+                  </div>
+                  
+                  {/* Engages Audience */}
+                  <div style={{ marginBottom: '15px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
+                      <span style={{ fontWeight: '500' }}>Engages Audience </span>
+                      <span style={{ fontWeight: 'bold', color: 'var(--primary-accent)' }}>{engagesAudience}/6</span>
+                    </div>
+                    <input 
+                      type="range" 
+                      min="0" 
+                      max="6" 
+                      step="1"
+                      value={engagesAudience} 
+                      onChange={(e) => setEngagesAudience(parseInt(e.target.value))}
+                      style={{ 
+                        width: '100%', 
+                        height: '8px',
+                        borderRadius: '4px',
+                        background: `linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end))`,
+                        outline: 'none',
+                        appearance: 'none',
+                        cursor: 'pointer'
+                      }}
+                    />
+                  </div>
+                  
+                  {/* Explains Rationale */}
+                  <div style={{ marginBottom: '15px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
+                      <span style={{ fontWeight: '500' }}>Explains Rationale </span>
+                      <span style={{ fontWeight: 'bold', color: 'var(--primary-accent)' }}>{explainsRationale}/2</span>
+                    </div>
+                    <input 
+                      type="range" 
+                      min="0" 
+                      max="2" 
+                      step="1"
+                      value={explainsRationale} 
+                      onChange={(e) => setExplainsRationale(parseInt(e.target.value))}
+                      style={{ 
+                        width: '100%', 
+                        height: '8px',
+                        borderRadius: '4px',
+                        background: `linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end))`,
+                        outline: 'none',
+                        appearance: 'none',
+                        cursor: 'pointer'
+                      }}
+                    />
+                  </div>
+                  
+                  {/* Provides Detail */}
+                  <div style={{ marginBottom: '15px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
+                      <span style={{ fontWeight: '500' }}>Provides Detail </span>
+                      <span style={{ fontWeight: 'bold', color: 'var(--primary-accent)' }}>{providesDetail}/2</span>
+                    </div>
+                    <input 
+                      type="range" 
+                      min="0" 
+                      max="2" 
+                      step="1"
+                      value={providesDetail} 
+                      onChange={(e) => setProvidesDetail(parseInt(e.target.value))}
+                      style={{ 
+                        width: '100%', 
+                        height: '8px',
+                        borderRadius: '4px',
+                        background: `linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end))`,
+                        outline: 'none',
+                        appearance: 'none',
+                        cursor: 'pointer'
+                      }}
+                    />
+                  </div>
+                  
+                  {/* Demonstrates Significance */}
+                  <div style={{ marginBottom: '5px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px' }}>
+                      <span style={{ fontWeight: '500' }}>Demonstrates Significance </span>
+                      <span style={{ fontWeight: 'bold', color: 'var(--primary-accent)' }}>{demonstratesSignificance}/2</span>
+                    </div>
+                    <input 
+                      type="range" 
+                      min="0" 
+                      max="2" 
+                      step="1"
+                      value={demonstratesSignificance} 
+                      onChange={(e) => setDemonstratesSignificance(parseInt(e.target.value))}
+                      style={{ 
+                        width: '100%', 
+                        height: '8px',
+                        borderRadius: '4px',
+                        background: `linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end))`,
+                        outline: 'none',
+                        appearance: 'none',
+                        cursor: 'pointer'
+                      }}
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-            
-            {/* Action Buttons */}
-            <div style={{ 
-              display: 'flex', 
-              justifyContent: 'space-between', 
-              marginBottom: '30px',
-              gap: '15px'
-            }}>
-              <button 
-                onClick={resetScores}
-                style={{ 
-                  flex: '1',
-                  padding: '12px 20px',
-                  backgroundColor: '#f3f4f6',
-                  color: '#4b5563',
-                  border: 'none',
-                  borderRadius: '8px',
-                  fontWeight: '600',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)'
-                }}
-              >
-                Reset Scores
-              </button>
-              
-              <a 
-                href="/ap-research/resources"
-                style={{ 
-                  flex: '1',
-                  padding: '12px 20px',
-                  backgroundColor: 'var(--primary-accent)',
-                  color: 'white',
-                  textAlign: 'center',
-                  textDecoration: 'none',
-                  borderRadius: '8px',
-                  fontWeight: '600',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  boxShadow: '0 4px 6px rgba(59, 130, 246, 0.25)'
-                }}
-              >
-                Boost Your Score
-              </a>
-            </div>
-            
-            {/* Results Display */}
-            <div className="results-display" style={{ 
-              backgroundColor: 'var(--bg-gray)', 
-              padding: '25px', 
-              borderRadius: '12px',
-              textAlign: 'center'
-            }}>
-              <h2 style={{ marginBottom: '15px', color: 'var(--primary-dark-blue)' }}>Your Estimated AP® Score</h2>
-              
+                
+              {/* Action Buttons - Moved to left column */}
               <div style={{ 
-                fontSize: '5rem', 
-                fontWeight: 'bold', 
-                color: 'var(--primary-accent)',
-                marginBottom: '15px'
+                display: 'flex', 
+                justifyContent: 'space-between', 
+                marginBottom: '30px',
+                gap: '15px'
               }}>
-                {finalScore}
+                <button 
+                  onClick={resetScores}
+                  style={{ 
+                    flex: '1',
+                    padding: '12px 20px',
+                    backgroundColor: '#f3f4f6',
+                    color: '#4b5563',
+                    border: 'none',
+                    borderRadius: '8px',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)'
+                  }}
+                >
+                  Reset Scores
+                </button>
+                
+                <a 
+                  href="/ap-research/resources"
+                  style={{ 
+                    flex: '1',
+                    padding: '12px 20px',
+                    backgroundColor: 'var(--primary-accent)',
+                    color: 'white',
+                    textAlign: 'center',
+                    textDecoration: 'none',
+                    borderRadius: '8px',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 4px 6px rgba(59, 130, 246, 0.25)'
+                  }}
+                >
+                  Boost Your Score
+                </a>
               </div>
-              
-              <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>
-                {finalScore >= 3 ? 
-                  "Congratulations! A score of 3 or higher typically qualifies for college credit." : 
-                  "Keep working! A score of 3 or higher is typically needed to qualify for college credit."}
-              </p>
-              
+            </div>
+            
+            {/* Right column - Results */}
+            <div style={{ flex: '1', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+              {/* Total Score out of 100 */}
               <div style={{ 
-                marginTop: '25px', 
+                marginBottom: '30px', 
                 padding: '15px', 
                 backgroundColor: 'rgba(59, 130, 246, 0.1)', 
-                borderRadius: '8px', 
-                fontSize: '0.9rem',
-                color: 'var(--text-secondary)',
-                textAlign: 'left'
+                borderRadius: '8px',
+                textAlign: 'center'
               }}>
-                <strong>Note:</strong> This calculator provides an estimate based on the 2026 AP® Research scoring guidelines. Actual scores may vary based on College Board's specific rubrics and evaluation criteria.
+                <h3 style={{ color: 'var(--primary-dark-blue)', marginBottom: '10px' }}>Total Weighted Score</h3>
+                <div style={{ 
+                  fontSize: '2.5rem', 
+                  fontWeight: 'bold', 
+                  color: 'var(--primary-accent)' 
+                }}>
+                  {totalWeightedScore}/100
+                </div>
+              </div>
+              
+              {/* Results Display */}
+              <div className="results-display" style={{ 
+                backgroundColor: 'var(--bg-gray)', 
+                padding: '25px', 
+                borderRadius: '12px',
+                textAlign: 'center',
+                flex: '1',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+              }}>
+                <div>
+                  <h2 style={{ marginBottom: '15px', color: 'var(--primary-dark-blue)' }}>Your Estimated AP® Score</h2>
+                  
+                  <div style={{ 
+                    fontSize: '5rem', 
+                    fontWeight: 'bold', 
+                    color: 'var(--primary-accent)',
+                    marginBottom: '15px'
+                  }}>
+                    {finalScore}
+                  </div>
+                  
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '1rem' }}>
+                    {finalScore >= 3 ? 
+                      "Congratulations! A score of 3 or higher typically qualifies for college credit." : 
+                      "Keep working! A score of 3 or higher is typically needed to qualify for college credit."}
+                  </p>
+                </div>
+                
+                <div style={{ 
+                  marginTop: 'auto', 
+                  padding: '15px', 
+                  backgroundColor: 'rgba(59, 130, 246, 0.1)', 
+                  borderRadius: '8px', 
+                  fontSize: '0.9rem',
+                  color: 'var(--text-secondary)',
+                  textAlign: 'left'
+                }}>
+                  <strong>Note:</strong> This calculator provides an estimate based on the 2026 AP® Research scoring guidelines. Actual scores may vary based on College Board's specific rubrics and evaluation criteria.
+                </div>
               </div>
             </div>
           </div>
@@ -556,7 +575,7 @@ const APResearchCalculator = () => {
       <footer className="landing-footer">
         <div className="footer-content">
           <div className="footer-logo">
-            <img src="images/logo.png" alt="AP Ace Logo" />
+            <img src="/images/logo.png" alt="AP Ace Logo" />
             <h3>AP Ace</h3>
           </div>
           <div className="footer-links">
