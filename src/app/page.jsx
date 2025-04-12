@@ -466,7 +466,7 @@ export default function LandingPage() {
               <img src="images/ap_calculus_ab.svg" alt="Calculus AB" />
             </div>
             <h3>Calculus AB</h3>
-            <a href="ap-ace-web/ap-calculus-ab" className="course-btn">Explore</a>
+            <a href="/ap-calculus-ab" className="course-btn">Explore</a>
           </div>
           
           {/* US History */}
