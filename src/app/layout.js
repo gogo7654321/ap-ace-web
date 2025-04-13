@@ -69,7 +69,7 @@ export default function RootLayout({ children }) {
           <div className="navbar-container">
             <Link href="/" className="navbar-logo">
               <a>
-                <Image src="/images/logo.png" alt="AP Ace Logo" width={40} height={40} />
+                <img src="/images/logo.png" alt="AP Ace Logo" width={40} height={40} />
                 <span>AP Ace</span>
               </a>
             </Link>
