@@ -122,7 +122,7 @@ export default function RootLayout({ children }) {
                 </svg>
               </div>
 
-              <Link href="/login"><a className="login-button">Login</a></Link>
+              <Link href="/auth"><a className="login-button">Login</a></Link>
 
               <button className="mobile-menu-button" onClick={() => setMobileNavOpen(true)}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
