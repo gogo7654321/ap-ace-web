@@ -31,7 +31,7 @@ export default function AuthPage() {
     <div className="auth-container">
       <div className="auth-card">
         <div className="logo-container">
-          <img src="/logo.png" alt="AP Ace Logo" className="auth-logo" />
+          <img src="images/logo.png" alt="AP Ace Logo" className="auth-logo" />
         </div>
         
         <h2 className="auth-title">{isLogin ? 'Welcome to AP Ace!' : 'Join AP Ace!'}</h2>
