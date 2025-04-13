@@ -62,7 +62,7 @@ const APClassTemplate = () => {
         <div className="hero-content">
           <div className="hero-logo">
             {/* Using an icon from your public folder */}
-            <img src="images/ap_research.png" alt="AP® Class Logo" />
+            <img src="/images/ap_research.png" alt="AP® Class Logo" />
           </div>
           <h1 className="hero-title">Welcome to <span className="class-name">AP® Research</span></h1>
           <p className="hero-subtitle">Develop critical thinking and research skills through independent investigation, analysis, and academic paper development.</p>
@@ -258,7 +258,7 @@ const APClassTemplate = () => {
       <footer className="landing-footer">
         <div className="footer-content">
           <div className="footer-logo">
-            <img src="images/logo.png" alt="AP Ace Logo" />
+            <img src="/images/logo.png" alt="AP Ace Logo" />
             <h3>AP Ace</h3>
           </div>
           <div className="footer-links">

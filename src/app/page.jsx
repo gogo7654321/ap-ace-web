@@ -6,6 +6,7 @@ import Link from 'next/link';
 import './styles/landing.css';
 
 export default function LandingPage() {
+  // Existing state variables
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isVisible, setIsVisible] = useState({
     passRateGraph: false,
@@ -25,6 +26,7 @@ export default function LandingPage() {
     studentsHelped: 0
   });
 
+  // Existing refs
   const passRateRef = useRef(null);
   const featuresRef = useRef(null);
   const coursesRef = useRef(null);
@@ -164,6 +166,14 @@ export default function LandingPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Function to toggle mobile dropdowns (from document 1)
+  const toggleMobileDropdown = (menu) => {
+    setMobileDropdowns(prev => ({
+      ...prev,
+      [menu]: !prev[menu]
+    }));
+  };
+
   // Popular AP courses in order of popularity
   const popularCourses = [
     { name: "Calculus AB", icon: "ap_calculus_ab.svg" },
@@ -175,9 +185,9 @@ export default function LandingPage() {
     { name: "World History", icon: "ap_world_history_modern.svg" },
     { name: "Computer Science Principles", icon: "ap_computer_science_principles.svg" }
   ];
-
   return (
     <div className="landing-container">
+
       {/* Hero Section with Parallax */}
       <section className="hero-section">
         <div 
@@ -449,7 +459,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-                  {/* Courses Section with Custom Icons */}
+      {/* Courses Section with Custom Icons */}
       <section className="courses-section" ref={coursesRef}>
         <div className="section-header">
           <h2>Popular AP Courses</h2>
