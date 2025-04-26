@@ -39,74 +39,72 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {/* Navigation Bar */}
-        <nav className={`navbar ${navbarScrolled ? 'scrolled' : ''}`}>
-          <div className="navbar-container">
-            <Link href="/" className="navbar-logo">
-              <img src="/images/logo.png" alt="AP Ace Logo" />
-              <span>AP Ace</span>
-            </Link>
-            
-            <div className="nav-items">
-              <div className="nav-item">
-                <Link href="/" className="nav-link">Home</Link>
-              </div>
-              
-              <div className="nav-item dropdown">
-                <Link href="/courses" className="nav-link">Courses</Link>
-              </div>
-              
-              <div className="nav-item dropdown">
-                <Link href="/guides" className="nav-link">Guides</Link>
-                {/* dropdown-content is still fine, because these are nested links */}
-                <div className="dropdown-content">
-                  <Link href="/guides/research-methods" className="dropdown-item">Research Methods</Link>
-                  <Link href="/guides/writing" className="dropdown-item">Academic Writing</Link>
-                  <Link href="/guides/presentation" className="dropdown-item">Presentation Skills</Link>
-                </div>
-              </div>
-              
-              <div className="nav-item dropdown">
-                <Link href="/dashboard" className="nav-link">Dashboard</Link>
-              </div>
-              
-              <div className="nav-item">
-                <Link href="/ai-tools" className="nav-link">AI Tools</Link>
-              </div>
-              
-              <div className="nav-item">
-                <Link href="/blog" className="nav-link">Blog</Link>
-              </div>
-              
-              <div className="nav-item">
-                <Link href="/about" className="nav-link">About</Link>
-              </div>
-              
-              <div className="nav-item">
-                <Link href="/contact" className="nav-link">Contact</Link>
-              </div>
-            </div>
-            
-            <div className="navbar-right">
-              {/* Search box (unchanged) */}
-              
-              <Link href="/auth" className="login-button">Login</Link>
-              
-              <button className="mobile-menu-button" onClick={() => setMobileNavOpen(true)}>
-                {/* hamburger menu svg */}
-              </button>
+        <Link href="/">
+          <div className="navbar-logo">
+            <img src="/images/logo.png" alt="AP Ace Logo" />
+            <span>AP Ace</span>
+          </div>
+        </Link>
+
+        <div className="nav-items">
+          <div className="nav-item">
+            <Link href="/" className="nav-link">Home</Link>
+          </div>
+          
+          <div className="nav-item dropdown">
+            <Link href="/courses" className="nav-link">Courses</Link>
+          </div>
+          
+          <div className="nav-item dropdown">
+            <Link href="/guides" className="nav-link">Guides</Link>
+            {/* dropdown-content is still fine, because these are nested links */}
+            <div className="dropdown-content">
+              <Link href="/guides/research-methods" className="dropdown-item">Research Methods</Link>
+              <Link href="/guides/writing" className="dropdown-item">Academic Writing</Link>
+              <Link href="/guides/presentation" className="dropdown-item">Presentation Skills</Link>
             </div>
           </div>
-        </nav>
+          
+          <div className="nav-item dropdown">
+            <Link href="/dashboard" className="nav-link">Dashboard</Link>
+          </div>
+          
+          <div className="nav-item">
+            <Link href="/ai-tools" className="nav-link">AI Tools</Link>
+          </div>
+          
+          <div className="nav-item">
+            <Link href="/blog" className="nav-link">Blog</Link>
+          </div>
+          
+          <div className="nav-item">
+            <Link href="/about" className="nav-link">About</Link>
+          </div>
+          
+          <div className="nav-item">
+            <Link href="/contact" className="nav-link">Contact</Link>
+          </div>
+        </div>
+        
+        <div className="navbar-right">
+          {/* Search box (unchanged) */}
+          
+          <Link href="/auth" className="login-button">Login</Link>
+          
+          <button className="mobile-menu-button" onClick={() => setMobileNavOpen(true)}>
+            {/* hamburger menu svg */}
+          </button>
+        </div>
         
         {/* Mobile Navigation */}
         <div className={`mobile-overlay ${mobileNavOpen ? 'active' : ''}`} onClick={() => setMobileNavOpen(false)}></div>
-        
         <div className={`mobile-nav ${mobileNavOpen ? 'active' : ''}`}>
           <div className="mobile-nav-header">
-            <Link href="/" className="navbar-logo">
-              <img src="/images/logo.png" alt="AP Ace Logo" />
-              <span>AP Ace</span>
+            <Link href="/">
+              <div className="navbar-logo">
+                <img src="/images/logo.png" alt="AP Ace Logo" />
+                <span>AP Ace</span>
+              </div>
             </Link>
             <button className="mobile-nav-close" onClick={() => setMobileNavOpen(false)}>
               {/* close svg */}
@@ -170,10 +168,7 @@ export default function RootLayout({ children }) {
         <main>
           {children}
         </main>
-
       </body>
     </html>
   );
 }
-
-    
