@@ -1,4 +1,3 @@
-// src/app/layout.js
 "use client";
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
@@ -12,7 +11,6 @@ export default function RootLayout({ children }) {
     guides: false,
   });
 
-  // This runs only on client
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -21,12 +19,8 @@ export default function RootLayout({ children }) {
         setNavbarScrolled(false);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleMobileDropdown = (menu) => {
@@ -39,65 +33,70 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Link href="/">
-          <div className="navbar-logo">
-            <img src="/images/logo.png" alt="AP Ace Logo" />
-            <span>AP Ace</span>
-          </div>
-        </Link>
+        {/* Navigation Bar */}
+        <nav className={`navbar ${navbarScrolled ? 'scrolled' : ''}`}>
+          <div className="navbar-container">
+            <Link href="/">
+              <div className="navbar-logo">
+                <img src="/images/logo.png" alt="AP Ace Logo" />
+                <span>AP Ace</span>
+              </div>
+            </Link>
 
-        <div className="nav-items">
-          <div className="nav-item">
-            <Link href="/" className="nav-link">Home</Link>
-          </div>
-          
-          <div className="nav-item dropdown">
-            <Link href="/courses" className="nav-link">Courses</Link>
-          </div>
-          
-          <div className="nav-item dropdown">
-            <Link href="/guides" className="nav-link">Guides</Link>
-            {/* dropdown-content is still fine, because these are nested links */}
-            <div className="dropdown-content">
-              <Link href="/guides/research-methods" className="dropdown-item">Research Methods</Link>
-              <Link href="/guides/writing" className="dropdown-item">Academic Writing</Link>
-              <Link href="/guides/presentation" className="dropdown-item">Presentation Skills</Link>
+            <div className="nav-items">
+              <div className="nav-item">
+                <Link href="/"><div className="nav-link">Home</div></Link>
+              </div>
+
+              <div className="nav-item dropdown">
+                <Link href="/courses"><div className="nav-link">Courses</div></Link>
+              </div>
+
+              <div className="nav-item dropdown">
+                <Link href="/guides"><div className="nav-link">Guides</div></Link>
+                <div className="dropdown-content">
+                  <Link href="/guides/research-methods"><div className="dropdown-item">Research Methods</div></Link>
+                  <Link href="/guides/writing"><div className="dropdown-item">Academic Writing</div></Link>
+                  <Link href="/guides/presentation"><div className="dropdown-item">Presentation Skills</div></Link>
+                </div>
+              </div>
+
+              <div className="nav-item dropdown">
+                <Link href="/dashboard"><div className="nav-link">Dashboard</div></Link>
+              </div>
+
+              <div className="nav-item">
+                <Link href="/ai-tools"><div className="nav-link">AI Tools</div></Link>
+              </div>
+
+              <div className="nav-item">
+                <Link href="/blog"><div className="nav-link">Blog</div></Link>
+              </div>
+
+              <div className="nav-item">
+                <Link href="/about"><div className="nav-link">About</div></Link>
+              </div>
+
+              <div className="nav-item">
+                <Link href="/contact"><div className="nav-link">Contact</div></Link>
+              </div>
+            </div>
+
+            <div className="navbar-right">
+              <Link href="/auth">
+                <div className="login-button">Login</div>
+              </Link>
+
+              <button className="mobile-menu-button" onClick={() => setMobileNavOpen(true)}>
+                {/* hamburger menu svg */}
+              </button>
             </div>
           </div>
-          
-          <div className="nav-item dropdown">
-            <Link href="/dashboard" className="nav-link">Dashboard</Link>
-          </div>
-          
-          <div className="nav-item">
-            <Link href="/ai-tools" className="nav-link">AI Tools</Link>
-          </div>
-          
-          <div className="nav-item">
-            <Link href="/blog" className="nav-link">Blog</Link>
-          </div>
-          
-          <div className="nav-item">
-            <Link href="/about" className="nav-link">About</Link>
-          </div>
-          
-          <div className="nav-item">
-            <Link href="/contact" className="nav-link">Contact</Link>
-          </div>
-        </div>
-        
-        <div className="navbar-right">
-          {/* Search box (unchanged) */}
-          
-          <Link href="/auth" className="login-button">Login</Link>
-          
-          <button className="mobile-menu-button" onClick={() => setMobileNavOpen(true)}>
-            {/* hamburger menu svg */}
-          </button>
-        </div>
-        
+        </nav>
+
         {/* Mobile Navigation */}
         <div className={`mobile-overlay ${mobileNavOpen ? 'active' : ''}`} onClick={() => setMobileNavOpen(false)}></div>
+
         <div className={`mobile-nav ${mobileNavOpen ? 'active' : ''}`}>
           <div className="mobile-nav-header">
             <Link href="/">
@@ -106,60 +105,59 @@ export default function RootLayout({ children }) {
                 <span>AP Ace</span>
               </div>
             </Link>
+
             <button className="mobile-nav-close" onClick={() => setMobileNavOpen(false)}>
               {/* close svg */}
             </button>
           </div>
-          
+
           <div className="mobile-nav-items">
             <div className="mobile-nav-item">
-              <Link href="/" className="mobile-nav-link">Home</Link>
+              <Link href="/"><div className="mobile-nav-link">Home</div></Link>
             </div>
-            
+
             <div className="mobile-nav-item">
               <button className={`mobile-dropdown-toggle ${mobileDropdowns.courses ? 'active' : ''}`} onClick={() => toggleMobileDropdown('courses')}>
                 Courses
-                {/* dropdown arrow */}
               </button>
             </div>
-            
+
             <div className="mobile-nav-item">
               <button className={`mobile-dropdown-toggle ${mobileDropdowns.guides ? 'active' : ''}`} onClick={() => toggleMobileDropdown('guides')}>
                 Guides
-                {/* dropdown arrow */}
               </button>
-              
+
               {mobileDropdowns.guides && (
                 <div className="mobile-submenu">
-                  <Link href="/guides/research-methods" className="mobile-nav-link">Research Methods</Link>
-                  <Link href="/guides/writing" className="mobile-nav-link">Academic Writing</Link>
-                  <Link href="/guides/presentation" className="mobile-nav-link">Presentation Skills</Link>
+                  <Link href="/guides/research-methods"><div className="mobile-nav-link">Research Methods</div></Link>
+                  <Link href="/guides/writing"><div className="mobile-nav-link">Academic Writing</div></Link>
+                  <Link href="/guides/presentation"><div className="mobile-nav-link">Presentation Skills</div></Link>
                 </div>
               )}
             </div>
-            
+
             <div className="mobile-nav-item">
-              <Link href="/dashboard" className="mobile-nav-link">Dashboard</Link>
+              <Link href="/dashboard"><div className="mobile-nav-link">Dashboard</div></Link>
             </div>
-            
+
             <div className="mobile-nav-item">
-              <Link href="/ai-tools" className="mobile-nav-link">AI Tools</Link>
+              <Link href="/ai-tools"><div className="mobile-nav-link">AI Tools</div></Link>
             </div>
-            
+
             <div className="mobile-nav-item">
-              <Link href="/blog" className="mobile-nav-link">Blog</Link>
+              <Link href="/blog"><div className="mobile-nav-link">Blog</div></Link>
             </div>
-            
+
             <div className="mobile-nav-item">
-              <Link href="/about" className="mobile-nav-link">About</Link>
+              <Link href="/about"><div className="mobile-nav-link">About</div></Link>
             </div>
-            
+
             <div className="mobile-nav-item">
-              <Link href="/contact" className="mobile-nav-link">Contact</Link>
+              <Link href="/contact"><div className="mobile-nav-link">Contact</div></Link>
             </div>
-            
+
             <div className="mobile-nav-item">
-              <Link href="/login" className="mobile-nav-link">Login</Link>
+              <Link href="/auth"><div className="mobile-nav-link">Login</div></Link>
             </div>
           </div>
         </div>
