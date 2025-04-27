@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
           <div className="navbar-container">
             <Link href="/" className="navbar-logo">
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <Image
+              <Image
                   src="/images/logo.png"
                   alt="AP Ace Logo"
                   width={40}
@@ -104,7 +104,7 @@ export default function RootLayout({ children }) {
           <div className="mobile-nav-header">
             <Link href="/" className="navbar-logo">
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <Image
+              <Image
                   src="/images/logo.png"
                   alt="AP Ace Logo"
                   width={40}
