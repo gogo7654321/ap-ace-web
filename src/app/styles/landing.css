@@ -369,7 +369,7 @@ html, body {
   stroke-linecap: round;
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
-  transition: stroke-dashoffset 1.5s ease-out;
+  transition: height 1s ease-out;
 }
 
 .graph-caption {

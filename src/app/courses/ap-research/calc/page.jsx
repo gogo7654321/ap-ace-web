@@ -570,47 +570,6 @@ const APResearchCalculator = () => {
           </a>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="landing-footer">
-        <div className="footer-content">
-          <div className="footer-logo">
-            <img src="/images/logo.png" alt="AP Ace Logo" />
-            <h3>AP Ace</h3>
-          </div>
-          <div className="footer-links">
-            <div className="link-group">
-              <h4>Resources</h4>
-              <ul>
-                <li><a href="#">Study Guides</a></li>
-                <li><a href="#">Practice Tests</a></li>
-                <li><a href="#">Flashcards</a></li>
-                <li><a href="#">Tutoring</a></li>
-              </ul>
-            </div>
-            <div className="link-group">
-              <h4>Company</h4>
-              <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </div>
-            <div className="link-group">
-              <h4>Legal</h4>
-              <ul>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Cookie Policy</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="copyright">
-          <p>&copy; {new Date().getFullYear()} AP Ace. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
   );
 }
