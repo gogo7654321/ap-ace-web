@@ -63,8 +63,7 @@ No shortcuts.
 
 ## 🧸 Mascot
 
-Ace the Dog 🐾  
-Smart, loyal, always one step ahead.
+tbd atm
 
 ---
 
