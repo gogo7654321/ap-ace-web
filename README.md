@@ -68,6 +68,11 @@ tbd atm
 ---
 
 ## 🪪 License
-
-All rights reserved.  
-Reach out before using anything for public or commercial use.
+#‼️‼️
+Proprietary / All Rights Reserved.
+Creative Commons Attribution-NonCommercial-NoDerivatives (CC BY-NC-ND 4.0).
+Pursuing patent protection
+Copyright 2025 gogo7654321
+This project is proprietary and confidential.  
+No part of this codebase may be copied, distributed, modified, or used in any form without prior written permission from the author.
+#‼️‼️
