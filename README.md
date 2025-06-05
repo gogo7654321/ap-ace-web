@@ -38,17 +38,6 @@ All critical logic and systems are secured and **not exposed** here.
 
 ---
 
-## 🛠️ Setup (For Devs)
-
-```bash
-git clone https://github.com/your-username/ap-ace.git
-cd ap-ace
-npm install
-npm run dev
-```
-
----
-
 ## 🧃 Status
 
 Still in early development.  
