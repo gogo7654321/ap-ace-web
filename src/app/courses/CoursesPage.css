@@ -1,8 +1,8 @@
-/* CoursesPage.css - Modern AP Courses Page */
+/* CoursesPage.css - Modern AP Courses Page with Colored Icons */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Modern color scheme */
+  /* Updated color scheme to work with colored icons */
   --primary-dark-blue: #1e3a8a;
   --primary-accent: #3b82f6;
   --primary-gradient-start: #1e3a8a;
@@ -17,6 +17,7 @@
   --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
   --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
   --card-shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.15);
+  --icon-bg: rgba(255, 255, 255, 0.9); /* New variable for icon background */
 }
 
 * {
@@ -178,40 +179,29 @@ body {
   transform: translateX(4px);
 }
 
-/* Course Image Container */
+/* Updated Course Image Container for colored icons */
 .course-image-container {
   height: 200px;
-  background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0); /* Lighter gradient background */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   position: relative;
-}
-
-.course-image-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, 
-    rgba(30, 58, 138, 0.9), 
-    rgba(59, 130, 246, 0.8), 
-    rgba(14, 165, 233, 0.7)
-  );
-  z-index: 1;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .course-icon {
-  width: 80px;
-  height: 80px;
-  filter: brightness(0) invert(1);
+  width: 100px;
+  height: 100px;
   z-index: 2;
   position: relative;
   transition: transform 0.4s var(--animation-timing);
   object-fit: contain;
+  background-color: var(--icon-bg);
+  padding: 16px;
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 /* Course Content */
@@ -235,6 +225,7 @@ body {
   margin-bottom: 24px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -409,8 +400,9 @@ body {
   }
 
   .course-icon {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
+    padding: 12px;
   }
 
   .course-content {
