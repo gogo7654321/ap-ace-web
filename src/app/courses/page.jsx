@@ -259,7 +259,11 @@ const CoursesPage = () => {
       {/* Search Section */}
       <div className="search-section animate-on-scroll animate-in">
         <div className="search-container">
-          <div className="search-icon">🔍</div>
+          <img
+            src="./images/search-icon.svg"
+            alt="Search"
+            className="search-icon"
+          />
           <input
             type="text"
             className="search-input"
@@ -287,12 +291,12 @@ const CoursesPage = () => {
               >
                 <div className="course-image-container">
                   <img
-                    src={`/icons/${course.icon}`}
+                    src={`./images/${course.icon}`}
                     alt={course.title}
                     className="course-image"
                     onError={(e) => {
                       // Fallback to a default icon if image fails to load
-                      e.target.src = '/icons/default-course.svg';
+                      e.target.src = './images/default-course.svg';
                     }}
                   />
                 </div>
