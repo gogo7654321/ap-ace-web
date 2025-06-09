@@ -11,162 +11,248 @@ const CoursesPage = () => {
 
   // Course data with descriptions (removed levels)
   const courses = [
-    {
-      id: 'ap_biology',
-      title: 'AP Biology',
-      description: 'Explore the science of life through laboratory investigations and advanced study of cellular processes, genetics, evolution, and ecology.',
-      icon: 'ap_biology.svg'
-    },
-    {
-      id: 'ap_calculus_ab',
-      title: 'AP Calculus AB',
-      description: 'Master the fundamentals of differential and integral calculus through limits, derivatives, and their applications.',
-      icon: 'ap_calculus_ab.svg'
-    },
-    {
-      id: 'ap_calculus_bc',
-      title: 'AP Calculus BC',
-      description: 'Advanced calculus covering all AB topics plus additional techniques of integration, series, and parametric equations.',
-      icon: 'ap_calculus_bc.svg'
-    },
-    {
-      id: 'ap_chemistry',
-      title: 'AP Chemistry',
-      description: 'Dive deep into chemical reactions, atomic structure, bonding, and thermodynamics through hands-on laboratory work.',
-      icon: 'ap_chemistry.svg'
-    },
-    {
-      id: 'ap_computer_science_a',
-      title: 'AP Computer Science A',
-      description: 'Learn object-oriented programming in Java, including data structures, algorithms, and software design principles.',
-      icon: 'ap_computer_science_a.svg'
-    },
-    {
-      id: 'ap_computer_science_principles',
-      title: 'AP Computer Science Principles',
-      description: 'Explore the foundational concepts of computer science including programming, algorithms, and the impact of computing.',
-      icon: 'ap_computer_science_principles.svg'
-    },
-    {
-      id: 'ap_english_language',
-      title: 'AP English Language and Composition',
-      description: 'Develop advanced writing and analytical skills through the study of rhetoric, argumentation, and composition.',
-      icon: 'ap_english_language.svg'
-    },
-    {
-      id: 'ap_english_literature',
-      title: 'AP English Literature and Composition',
-      description: 'Analyze and interpret literature while developing sophisticated writing skills and critical thinking abilities.',
-      icon: 'ap_english_literature.svg'
-    },
-    {
-      id: 'ap_environmental_science',
-      title: 'AP Environmental Science',
-      description: 'Study environmental systems, human impact on the environment, and solutions to environmental problems.',
-      icon: 'ap_environmental_science.svg'
-    },
-    {
-      id: 'ap_european_history',
-      title: 'AP European History',
-      description: 'Explore European history from 1450 to present, analyzing historical documents and developing historical thinking skills.',
-      icon: 'ap_european_history.svg'
-    },
-    {
-      id: 'ap_human_geography',
-      title: 'AP Human Geography',
-      description: 'Examine patterns and processes that shape human understanding and use of Earth at local, regional, and global scales.',
-      icon: 'ap_human_geography.svg'
-    },
-    {
-      id: 'ap_macroeconomics',
-      title: 'AP Macroeconomics',
-      description: 'Study economic principles that apply to an economy as a whole, including national income, inflation, and fiscal policy.',
-      icon: 'ap_macroeconomics.svg'
-    },
-    {
-      id: 'ap_microeconomics',
-      title: 'AP Microeconomics',
-      description: 'Analyze individual economic behavior, market structures, and the role of government in correcting market failures.',
-      icon: 'ap_microeconomics.svg'
-    },
-    {
-      id: 'ap_physics_1',
-      title: 'AP Physics 1',
-      description: 'Explore mechanics, waves, and sound through inquiry-based laboratory investigations and mathematical analysis.',
-      icon: 'ap_physics_1.svg'
-    },
-    {
-      id: 'ap_physics_2',
-      title: 'AP Physics 2',
-      description: 'Study electricity, magnetism, optics, thermodynamics, and modern physics through hands-on experiments.',
-      icon: 'ap_physics_2.svg'
-    },
-    {
-      id: 'ap_physics_c_mechanics',
-      title: 'AP Physics C: Mechanics',
-      description: 'Advanced calculus-based study of classical mechanics including kinematics, dynamics, and energy conservation.',
-      icon: 'ap_physics_c_mechanics.svg'
-    },
-    {
-      id: 'ap_physics_c_electricity_magnetism',
-      title: 'AP Physics C: Electricity & Magnetism',
-      description: 'Calculus-based exploration of electric fields, magnetic fields, and electromagnetic induction.',
-      icon: 'ap_physics_c_electricity_magnetism.svg'
-    },
-    {
-      id: 'ap_precalculus',
-      title: 'AP Precalculus',
-      description: 'Build mathematical foundation for calculus through functions, trigonometry, and analytical geometry.',
-      icon: 'ap_precalculus.svg'
-    },
-    {
-      id: 'ap_psychology',
-      title: 'AP Psychology',
-      description: 'Examine human behavior and mental processes through scientific methods and psychological perspectives.',
-      icon: 'ap_psychology.svg'
-    },
-    {
-      id: 'ap_research',
-      title: 'AP Research',
-      description: 'Conduct independent research on a topic of personal interest, culminating in an academic paper and presentation.',
-      icon: 'ap_research.svg'
-    },
-    {
-      id: 'ap_seminar',
-      title: 'AP Seminar',
-      description: 'Develop critical thinking and research skills through investigation of complex, real-world issues and problems.',
-      icon: 'ap_seminar.svg'
-    },
-    {
-      id: 'ap_spanish_language',
-      title: 'AP Spanish Language and Culture',
-      description: 'Develop proficiency in Spanish through authentic materials and cultural exploration of Spanish-speaking countries.',
-      icon: 'ap_spanish_language.svg'
-    },
-    {
-      id: 'ap_statistics',
-      title: 'AP Statistics',
-      description: 'Learn statistical concepts and methods for collecting, analyzing, and interpreting data in real-world contexts.',
-      icon: 'ap_statistics.svg'
-    },
-    {
-      id: 'ap_united_states_government_politics',
-      title: 'AP U.S. Government and Politics',
-      description: 'Study the American political system, constitutional principles, and the role of citizens in democratic society.',
-      icon: 'ap_united_states_government_politics.svg'
-    },
-    {
-      id: 'ap_united_states_history',
-      title: 'AP U.S. History',
-      description: 'Examine American history from pre-Columbian times to present, developing historical analysis and writing skills.',
-      icon: 'ap_united_states_history.svg'
-    },
-    {
-      id: 'ap_world_history',
-      title: 'AP World History: Modern',
-      description: 'Explore global historical processes and connections from 1200 CE to present across different civilizations.',
-      icon: 'ap_world_history.svg'
-    }
+    [
+  {
+    id: 'ap_african_american_studies',
+    title: 'AP African American Studies',
+    description: 'Examine the history, culture, and contributions of African Americans across time through an interdisciplinary lens.',
+    icon: 'ap_african_american_studies.svg'
+  },
+  {
+    id: 'ap_art_history',
+    title: 'AP Art History',
+    description: 'Explore global art across centuries, cultures, and media, learning to analyze visual artworks critically.',
+    icon: 'ap_art_history.svg'
+  },
+  {
+    id: 'ap_biology',
+    title: 'AP Biology',
+    description: 'Dive into the science of life—cell functions, genetics, evolution, and ecosystems—through labs and inquiry.',
+    icon: 'ap_biology.svg'
+  },
+  {
+    id: 'ap_calculus_ab',
+    title: 'AP Calculus AB',
+    description: 'Master limits, derivatives, and integrals while learning to model real-world phenomena with calculus.',
+    icon: 'ap_calculus_ab.svg'
+  },
+  {
+    id: 'ap_calculus_bc',
+    title: 'AP Calculus BC',
+    description: 'Extend your calculus knowledge with series, polar functions, and advanced integration techniques.',
+    icon: 'ap_calculus_bc.svg'
+  },
+  {
+    id: 'ap_chemistry',
+    title: 'AP Chemistry',
+    description: 'Explore atomic structure, bonding, reactions, and thermodynamics with labs and mathematical reasoning.',
+    icon: 'ap_chemistry.svg'
+  },
+  {
+    id: 'ap_chinese_language_and_culture',
+    title: 'AP Chinese Language and Culture',
+    description: 'Develop proficiency in Mandarin Chinese and understand Chinese-speaking cultures through authentic resources.',
+    icon: 'ap_chinese_language_and_culture.svg'
+  },
+  {
+    id: 'ap_comparative_government_and_politics',
+    title: 'AP Comparative Government and Politics',
+    description: 'Compare political systems across countries and analyze governments, policies, and citizen roles globally.',
+    icon: 'ap_comparative_government_and_politics.svg'
+  },
+  {
+    id: 'ap_computer_science_a',
+    title: 'AP Computer Science A',
+    description: 'Learn Java programming, algorithms, and object-oriented design through problem-solving and projects.',
+    icon: 'ap_computer_science_a.svg'
+  },
+  {
+    id: 'ap_computer_science_principles',
+    title: 'AP Computer Science Principles',
+    description: 'Explore computing principles, the internet, data, and app development with a broad, creative approach.',
+    icon: 'ap_computer_science_principles.svg'
+  },
+  {
+    id: 'ap_english_language_and_composition',
+    title: 'AP English Language and Composition',
+    description: 'Analyze nonfiction texts and write arguments, syntheses, and analyses with rhetorical precision.',
+    icon: 'ap_english_language_and_composition.svg'
+  },
+  {
+    id: 'ap_english_literature_and_composition',
+    title: 'AP English Literature and Composition',
+    description: 'Read and analyze literary texts from various genres and time periods, crafting insightful essays.',
+    icon: 'ap_english_literature_and_composition.svg'
+  },
+  {
+    id: 'ap_environmental_science',
+    title: 'AP Environmental Science',
+    description: 'Investigate ecological processes, human impact, and sustainability through data and experimentation.',
+    icon: 'ap_environmental_science.svg'
+  },
+  {
+    id: 'ap_european_history',
+    title: 'AP European History',
+    description: 'Study European events, movements, and ideologies from the Renaissance to present day.',
+    icon: 'ap_european_history.svg'
+  },
+  {
+    id: 'ap_french_language_and_culture',
+    title: 'AP French Language and Culture',
+    description: 'Improve your French proficiency and explore Francophone cultures through immersive, authentic sources.',
+    icon: 'ap_french_language_and_culture.svg'
+  },
+  {
+    id: 'ap_german_language_and_culture',
+    title: 'AP German Language and Culture',
+    description: 'Enhance your German skills while exploring cultural themes in historical and modern contexts.',
+    icon: 'ap_german_language_and_culture.svg'
+  },
+  {
+    id: 'ap_human_geography',
+    title: 'AP Human Geography',
+    description: 'Explore how humans shape the world through population trends, urbanization, and cultural diffusion.',
+    icon: 'ap_human_geography.svg'
+  },
+  {
+    id: 'ap_italian_language_and_culture',
+    title: 'AP Italian Language and Culture',
+    description: 'Deepen your Italian communication skills and cultural understanding using real-world media.',
+    icon: 'ap_italian_language_and_culture.svg'
+  },
+  {
+    id: 'ap_japanese_language_and_culture',
+    title: 'AP Japanese Language and Culture',
+    description: 'Build fluency in Japanese and connect with modern and traditional elements of Japanese culture.',
+    icon: 'ap_japanese_language_and_culture.svg'
+  },
+  {
+    id: 'ap_latin',
+    title: 'AP Latin',
+    description: 'Translate classical Latin texts and explore Roman culture, literature, and historical context.',
+    icon: 'ap_latin.svg'
+  },
+  {
+    id: 'ap_macroeconomics',
+    title: 'AP Macroeconomics',
+    description: 'Analyze the economy at a national and global scale, learning about inflation, unemployment, and policy.',
+    icon: 'ap_macroeconomics.svg'
+  },
+  {
+    id: 'ap_microeconomics',
+    title: 'AP Microeconomics',
+    description: 'Focus on individual decision-making units, markets, and how prices and policies affect behavior.',
+    icon: 'ap_microeconomics.svg'
+  },
+  {
+    id: 'ap_music_theory',
+    title: 'AP Music Theory',
+    description: 'Understand musical structure through analysis, ear training, sight-singing, and composition.',
+    icon: 'ap_music_theory.svg'
+  },
+  {
+    id: 'ap_physics_1',
+    title: 'AP Physics 1',
+    description: 'Explore mechanics, waves, and sound through inquiry-based laboratory investigations and mathematical analysis.',
+    icon: 'ap_physics_1.svg'
+  },
+  {
+    id: 'ap_physics_2',
+    title: 'AP Physics 2',
+    description: 'Dive into fluid dynamics, thermodynamics, electricity, and quantum physics with a conceptual approach.',
+    icon: 'ap_physics_2.svg'
+  },
+  {
+    id: 'ap_physics_c_mechanics',
+    title: 'AP Physics C: Mechanics',
+    description: 'Study Newtonian mechanics with rigorous calculus-based problem solving and applications.',
+    icon: 'ap_physics_c_mechanics.svg'
+  },
+  {
+    id: 'ap_physics_c_electricity_and_magnetism',
+    title: 'AP Physics C: Electricity and Magnetism',
+    description: 'Explore electrostatics, circuits, and magnetism through a calculus-based lens.',
+    icon: 'ap_physics_c_electricity_and_magnetism.svg'
+  },
+  {
+    id: 'ap_precalculus',
+    title: 'AP Precalculus',
+    description: 'Build a strong mathematical foundation with functions, modeling, and trigonometry.',
+    icon: 'ap_precalculus.svg'
+  },
+  {
+    id: 'ap_psychology',
+    title: 'AP Psychology',
+    description: 'Learn the scientific study of behavior and mental processes, from cognition to disorders.',
+    icon: 'ap_psychology.svg'
+  },
+  {
+    id: 'ap_research',
+    title: 'AP Research',
+    description: 'Design, conduct, and present an independent research project on a topic of your choice.',
+    icon: 'ap_research.svg'
+  },
+  {
+    id: 'ap_seminar',
+    title: 'AP Seminar',
+    description: 'Investigate real-world issues through interdisciplinary research and collaborative projects.',
+    icon: 'ap_seminar.svg'
+  },
+  {
+    id: 'ap_spanish_language_and_culture',
+    title: 'AP Spanish Language and Culture',
+    description: 'Enhance your Spanish proficiency and explore cultural perspectives through varied sources.',
+    icon: 'ap_spanish_language_and_culture.svg'
+  },
+  {
+    id: 'ap_spanish_literature_and_culture',
+    title: 'AP Spanish Literature and Culture',
+    description: 'Analyze Spanish-language literary works and connect them with historical and cultural contexts.',
+    icon: 'ap_spanish_literature_and_culture.svg'
+  },
+  {
+    id: 'ap_statistics',
+    title: 'AP Statistics',
+    description: 'Collect, analyze, and interpret data using statistical methods and real-world applications.',
+    icon: 'ap_statistics.svg'
+  },
+  {
+    id: 'ap_studio_art_2d',
+    title: 'AP Studio Art: 2-D Design',
+    description: 'Create a portfolio demonstrating mastery of 2D design principles using digital or traditional media.',
+    icon: 'ap_studio_art_2d.svg'
+  },
+  {
+    id: 'ap_studio_art_3d',
+    title: 'AP Studio Art: 3-D Design',
+    description: 'Design a 3D art portfolio exploring space, depth, and form across multiple media.',
+    icon: 'ap_studio_art_3d.svg'
+  },
+  {
+    id: 'ap_studio_art_drawing',
+    title: 'AP Studio Art: Drawing',
+    description: 'Build a drawing portfolio that showcases your technical skill, visual style, and creative expression.',
+    icon: 'ap_studio_art_drawing.svg'
+  },
+  {
+    id: 'ap_united_states_government_and_politics',
+    title: 'AP U.S. Government and Politics',
+    description: 'Study the U.S. Constitution, political institutions, and behaviors that shape American democracy.',
+    icon: 'ap_united_states_government_and_politics.svg'
+  },
+  {
+    id: 'ap_united_states_history',
+    title: 'AP U.S. History',
+    description: 'Trace major events, themes, and turning points in American history from colonization to today.',
+    icon: 'ap_united_states_history.svg'
+  },
+  {
+    id: 'ap_world_history',
+    title: 'AP World History: Modern',
+    description: 'Examine global developments and interactions from 1200 CE to the present.',
+    icon: 'ap_world_history.svg'
+  }
+]
   ];
 
   // Filter courses based on search term

@@ -327,34 +327,34 @@ export default function LandingPage() {
         <div className="logos">
           <div className="logos-slide">
             <img src="images/sprayberry.png" alt="Sprayberry" />
-            <img src="images/south cobb.png" alt="South Cobb" />
-            <img src="images/pope.png" alt="Pope" />
-            <img src="images/pebblebrook.png" alt="Pebblebrook" />
-            <img src="images/osborne.png" alt="Osborne" />
-            <img src="images/north cobb.png" alt="North Cobb" />
-            <img src="images/mceachern.png" alt="McEachern" />
-            <img src="images/lassiter.png" alt="Lassiter" />
-            <img src="images/kennesaw.png" alt="Kennesaw" />
-            <img src="images/kell.png" alt="Kell" />
-            <img src="images/hillgrove.png" alt="Hillgrove" />
-            <img src="images/harrison.png" alt="Harrison" />
-            <img src="images/campbell.png" alt="Campbell" />
-            <img src="images/allatoona.png" alt="Allatoona" />
+            <img src="/images/highschools/south cobb.png" alt="South Cobb" />
+            <img src="/images/highschools/pope.png" alt="Pope" />
+            <img src="/images/highschools/pebblebrook.png" alt="Pebblebrook" />
+            <img src="/images/highschools/osborne.png" alt="Osborne" />
+            <img src="/images/highschools/north cobb.png" alt="North Cobb" />
+            <img src="/images/highschools/mceachern.png" alt="McEachern" />
+            <img src="/images/highschools/lassiter.png" alt="Lassiter" />
+            <img src="/images/highschools/kennesaw.png" alt="Kennesaw" />
+            <img src="/images/highschools/kell.png" alt="Kell" />
+            <img src="/images/highschools/hillgrove.png" alt="Hillgrove" />
+            <img src="/images/highschools/harrison.png" alt="Harrison" />
+            <img src="/images/highschools/campbell.png" alt="Campbell" />
+            <img src="/images/highschools/allatoona.png" alt="Allatoona" />
             {/* Duplicate the logos for seamless looping */}
-            <img src="images/sprayberry.png" alt="Sprayberry" />
-            <img src="images/south cobb.png" alt="South Cobb" />
-            <img src="images/pope.png" alt="Pope" />
-            <img src="images/pebblebrook.png" alt="Pebblebrook" />
-            <img src="images/osborne.png" alt="Osborne" />
-            <img src="images/north cobb.png" alt="North Cobb" />
-            <img src="images/mceachern.png" alt="McEachern" />
-            <img src="images/lassiter.png" alt="Lassiter" />
-            <img src="images/kennesaw.png" alt="Kennesaw" />
-            <img src="images/kell.png" alt="Kell" />
-            <img src="images/hillgrove.png" alt="Hillgrove" />
-            <img src="images/harrison.png" alt="Harrison" />
-            <img src="images/campbell.png" alt="Campbell" />
-            <img src="images/allatoona.png" alt="Allatoona" />
+            <img src="/images/highschools/sprayberry.png" alt="Sprayberry" />
+            <img src="/images/highschools/south cobb.png" alt="South Cobb" />
+            <img src="/images/highschools/pope.png" alt="Pope" />
+            <img src="/images/highschools/pebblebrook.png" alt="Pebblebrook" />
+            <img src="/images/highschools/osborne.png" alt="Osborne" />
+            <img src="/images/highschools/north cobb.png" alt="North Cobb" />
+            <img src="/images/highschools/mceachern.png" alt="McEachern" />
+            <img src="/images/highschools/lassiter.png" alt="Lassiter" />
+            <img src="/images/highschools/kennesaw.png" alt="Kennesaw" />
+            <img src="/images/highschools/kell.png" alt="Kell" />
+            <img src="/images/highschools/hillgrove.png" alt="Hillgrove" />
+            <img src="/images/highschools/harrison.png" alt="Harrison" />
+            <img src="/images/highschools/campbell.png" alt="Campbell" />
+            <img src="/images/highschools/allatoona.png" alt="Allatoona" />
           </div>
         </div>
       </section>
@@ -589,7 +589,7 @@ export default function LandingPage() {
         <div className="testimonials-container">
           <div className="testimonial-card">
             <div className="testimonial-image">
-              <img src="images/adam.JPEG" alt="Student" className="student-avatar" />
+              <img src="images/testimonials/adam.JPEG" alt="Student" className="student-avatar" />
             </div>
             <div className="testimonial-stars">★★★★★</div>
             <p className="testimonial-text">"AP Ace helped me organize my study schedule and focus on my weak areas. I improved from a 3 to a 5 on my AP Human exam!"</p>
@@ -598,7 +598,7 @@ export default function LandingPage() {
           
           <div className="testimonial-card">
             <div className="testimonial-image">
-              <img src="images/mann.jpeg" alt="Student" className="student-avatar" />
+              <img src="images/testimonials/mann.jpeg" alt="Student" className="student-avatar" />
             </div>
             <div className="testimonial-stars">★★★★★</div>
             <p className="testimonial-text">"The practice questions are spot-on! They really match the difficulty and style of the actual AP exams. Highly recommend!"</p>
@@ -607,7 +607,7 @@ export default function LandingPage() {
           
           <div className="testimonial-card">
             <div className="testimonial-image">
-              <img src="images/gabe.jpeg" alt="Student" className="student-avatar" />
+              <img src="images/testimonials/gabe.jpeg" alt="Student" className="student-avatar" />
             </div>
             <div className="testimonial-stars">★★★★★</div>
             <p className="testimonial-text">"AP Ace's detailed explanations for each practice question helped me understand complex concepts I had been struggling with."</p>
