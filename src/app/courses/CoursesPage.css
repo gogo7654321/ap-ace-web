@@ -1,8 +1,8 @@
-/* CoursesPage.css - Modern AP Courses Page with Colored Icons */
+
+/* CoursesPage.css - Modern AP Courses Page with All 40 Courses */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Updated color scheme to work with colored icons */
   --primary-dark-blue: #1e3a8a;
   --primary-accent: #3b82f6;
   --primary-gradient-start: #1e3a8a;
@@ -17,7 +17,8 @@
   --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
   --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
   --card-shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.15);
-  --icon-bg: rgba(255, 255, 255, 0.9); /* New variable for icon background */
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
 }
 
 * {
@@ -39,15 +40,24 @@ body {
   min-height: 100vh;
   padding: 100px 20px 60px;
   position: relative;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 }
 
 /* Header Section */
 .courses-header {
   text-align: center;
   margin-bottom: 60px;
-  max-width: 800px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s var(--animation-timing);
+}
+
+.courses-header.animate-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .courses-title {
@@ -78,26 +88,76 @@ body {
   border-radius: 2px;
 }
 
+/* Stats Container */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(10px);
+  min-width: 120px;
+}
+
+.stat-icon {
+  color: var(--primary-accent);
+  margin-bottom: 8px;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-dark-blue);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
 /* Search Section */
 .search-section {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s var(--animation-timing);
+}
+
+.search-section.animate-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .search-container {
   position: relative;
-  max-width: 500px;
+  max-width: 600px;
   width: 100%;
+  margin-bottom: 16px;
 }
 
 .search-input {
   width: 100%;
-  padding: 16px 24px 16px 56px;
+  padding: 18px 24px 18px 56px;
   font-size: 1.1rem;
   border: 2px solid transparent;
   border-radius: 50px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   box-shadow: var(--card-shadow);
   outline: none;
   transition: all 0.3s var(--animation-timing);
@@ -109,6 +169,7 @@ body {
   border-color: var(--primary-accent);
   box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1), var(--card-shadow-hover);
   transform: translateY(-2px);
+  background-color: white;
 }
 
 .search-input::placeholder {
@@ -122,9 +183,44 @@ body {
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-secondary);
-  width: 20px;
-  height: 20px;
   pointer-events: none;
+  z-index: 2;
+}
+
+.clear-search {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 4px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-search:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.search-results-info {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-align: center;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
 }
 
 /* Courses Grid */
@@ -142,7 +238,8 @@ body {
 
 /* Course Card */
 .course-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--card-shadow);
@@ -152,6 +249,7 @@ body {
   border: 1px solid rgba(226, 232, 240, 0.5);
   opacity: 0;
   transform: translateY(30px);
+  height: fit-content;
 }
 
 .course-card.animate-in {
@@ -163,9 +261,10 @@ body {
   transform: translateY(-12px) scale(1.02);
   box-shadow: var(--card-shadow-hover);
   border-color: rgba(59, 130, 246, 0.2);
+  background: white;
 }
 
-.course-card:hover .course-icon {
+.course-card:hover .course-icon-emoji {
   transform: scale(1.1);
 }
 
@@ -179,10 +278,15 @@ body {
   transform: translateX(4px);
 }
 
-/* Updated Course Image Container for colored icons */
+.course-card:hover .subject-badge {
+  background: var(--primary-accent);
+  color: white;
+}
+
+/* Course Image Container */
 .course-image-container {
   height: 200px;
-  background: linear-gradient(135deg, #f1f5f9, #e2e8f0); /* Lighter gradient background */
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -191,17 +295,35 @@ body {
   border-bottom: 1px solid var(--border-light);
 }
 
-.course-icon {
+.course-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100px;
   height: 100px;
-  z-index: 2;
-  position: relative;
-  transition: transform 0.4s var(--animation-timing);
-  object-fit: contain;
-  background-color: var(--icon-bg);
-  padding: 16px;
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 24px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s var(--animation-timing);
+}
+
+.course-icon-emoji {
+  font-size: 3rem;
+  transition: transform 0.4s var(--animation-timing);
+}
+
+.subject-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
 }
 
 /* Course Content */
@@ -262,6 +384,11 @@ body {
   color: var(--text-secondary);
 }
 
+.no-results-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
 .no-results h3 {
   font-size: 1.8rem;
   margin-bottom: 16px;
@@ -271,7 +398,23 @@ body {
 .no-results p {
   font-size: 1.1rem;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
+}
+
+.clear-search-btn {
+  background: var(--primary-accent);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clear-search-btn:hover {
+  background: var(--primary-dark-blue);
+  transform: translateY(-2px);
 }
 
 /* Loading Animation */
@@ -282,7 +425,8 @@ body {
 }
 
 .loading-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
   overflow: hidden;
   box-shadow: var(--card-shadow);
@@ -318,6 +462,14 @@ body {
   margin-bottom: 12px;
 }
 
+.loading-text.short {
+  width: 80%;
+}
+
+.loading-text.shorter {
+  width: 60%;
+}
+
 @keyframes pulse {
   0%, 100% {
     opacity: 1;
@@ -342,6 +494,10 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 28px;
   }
+  
+  .stats-container {
+    gap: 30px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -358,7 +514,7 @@ body {
   }
 
   .search-input {
-    padding: 14px 20px 14px 48px;
+    padding: 16px 20px 16px 48px;
     font-size: 1rem;
   }
 
@@ -384,6 +540,19 @@ body {
   .course-footer {
     justify-content: center;
   }
+
+  .stats-container {
+    gap: 20px;
+  }
+
+  .stat-item {
+    min-width: 100px;
+    padding: 16px;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -399,36 +568,85 @@ body {
     height: 160px;
   }
 
-  .course-icon {
+  .course-icon-wrapper {
     width: 80px;
     height: 80px;
-    padding: 12px;
+  }
+
+  .course-icon-emoji {
+    font-size: 2.5rem;
   }
 
   .course-content {
     padding: 20px;
   }
+
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .stat-item {
+    flex-direction: row;
+    gap: 12px;
+    min-width: 200px;
+  }
+
+  .search-container {
+    max-width: 100%;
+  }
 }
 
-/* Stagger animation for course cards */
-.course-card:nth-child(1) { animation-delay: 0.1s; }
-.course-card:nth-child(2) { animation-delay: 0.2s; }
-.course-card:nth-child(3) { animation-delay: 0.3s; }
-.course-card:nth-child(4) { animation-delay: 0.4s; }
-.course-card:nth-child(5) { animation-delay: 0.5s; }
-.course-card:nth-child(6) { animation-delay: 0.6s; }
-.course-card:nth-child(7) { animation-delay: 0.7s; }
-.course-card:nth-child(8) { animation-delay: 0.8s; }
-.course-card:nth-child(9) { animation-delay: 0.9s; }
-
-/* Scroll to top animation */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s var(--animation-timing), transform 0.6s var(--animation-timing);
+/* Performance optimizations for large grids */
+.courses-grid {
+  contain: layout style paint;
 }
 
-.animate-on-scroll.animate-in {
-  opacity: 1;
-  transform: translateY(0);
+.course-card {
+  contain: layout style paint;
+  will-change: transform;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .course-card,
+  .search-input,
+  .learn-more-btn,
+  .courses-header,
+  .search-section {
+    transition: none;
+    animation: none;
+  }
+  
+  .course-card.animate-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Focus styles for accessibility */
+.course-card:focus {
+  outline: 3px solid var(--primary-accent);
+  outline-offset: 2px;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.learn-more-btn:focus,
+.clear-search:focus,
+.clear-search-btn:focus {
+  outline: 2px solid var(--primary-accent);
+  outline-offset: 2px;
+}
+
+/* Improved contrast for better readability */
+@media (prefers-contrast: high) {
+  :root {
+    --text-secondary: #374151;
+    --border-light: #9ca3af;
+  }
 }
